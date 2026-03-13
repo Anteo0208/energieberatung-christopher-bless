@@ -234,72 +234,90 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: energy card visual */}
+          {/* Right: illustration */}
           <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
             <div
               style={{
-                background: "var(--color-surface)",
+                background: "#F5F0E8",
                 border: "1px solid var(--color-border)",
-                borderRadius: "16px",
-                padding: "2.5rem",
+                borderRadius: "20px",
                 width: "100%",
-                maxWidth: "400px",
+                maxWidth: "420px",
+                aspectRatio: "4/3",
+                overflow: "hidden",
                 boxShadow: "0 20px 60px rgba(45,80,22,0.1)",
               }}
             >
-              <div style={{ marginBottom: "1.5rem" }}>
-                <div
-                  style={{
-                    fontSize: "0.7rem",
-                    letterSpacing: "0.15em",
-                    textTransform: "uppercase",
-                    color: "var(--color-text-muted)",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  Energieeffizienz-Klassen
-                </div>
-                {[
-                  { label: "A+", width: "95%", color: "#1a6b1a" },
-                  { label: "A", width: "80%", color: "#2D5016" },
-                  { label: "B", width: "65%", color: "#5a8c2a" },
-                  { label: "C", width: "50%", color: "#8fc34a" },
-                  { label: "D", width: "38%", color: "#C8A96E" },
-                ].map(({ label, width, color }) => (
-                  <div key={label} style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.5rem" }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.8rem", fontWeight: 500, width: "24px", color }}>
-                      {label}
-                    </span>
-                    <div style={{ flex: 1, height: "8px", background: "var(--color-surface-dark)", borderRadius: "4px", overflow: "hidden" }}>
-                      <div style={{ height: "100%", width, background: color, borderRadius: "4px" }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <svg viewBox="0 0 420 315" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "100%", display: "block" }}>
+                <rect width="420" height="315" fill="#F5F0E8" />
 
-              <div
-                style={{
-                  background: "var(--color-primary)",
-                  color: "#FAF7F2",
-                  borderRadius: "8px",
-                  padding: "1rem 1.25rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <div>
-                  <div style={{ fontSize: "0.75rem", opacity: 0.7, marginBottom: "2px" }}>Ihr Einsparpotenzial</div>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700 }}>
-                    bis zu 40%
-                  </div>
-                </div>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="rgba(250,247,242,0.6)" strokeWidth="1.5">
-                  <path d="M18 8C18 8 10 14 10 22a8 8 0 0016 0c0-8-8-14-8-14z" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
+                {/* Sun */}
+                <circle cx="370" cy="55" r="32" fill="#C8A87C" />
+                <circle cx="352" cy="65" r="32" fill="none" stroke="#333" strokeWidth="2.5" />
+
+                {/* Ground */}
+                <line x1="20" y1="248" x2="400" y2="248" stroke="#333" strokeWidth="2.5" strokeLinecap="round" />
+
+                {/* Tree left */}
+                <path d="M52,148 C65,142 73,164 70,196 C67,218 34,219 31,196 C28,164 39,142 52,148Z" fill="#6BBF35" stroke="#333" strokeWidth="2" />
+                <line x1="38" y1="167" x2="62" y2="189" stroke="#333" strokeWidth="1.5" />
+                <line x1="35" y1="190" x2="59" y2="212" stroke="#333" strokeWidth="1.5" />
+                <line x1="52" y1="219" x2="52" y2="248" stroke="#333" strokeWidth="2.5" strokeLinecap="round" />
+
+                {/* House insulation layer (dashed, warm glow) */}
+                <path d="M118,178 L118,246 L302,246 L302,178 L210,108 Z" fill="rgba(200,168,124,0.12)" stroke="#C8A87C" strokeWidth="1.5" strokeDasharray="5,4" strokeLinejoin="round" />
+
+                {/* House main */}
+                <path d="M130,185 L130,246 L290,246 L290,185" fill="#F5F0E8" stroke="#333" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+                {/* Roof */}
+                <polyline points="118,189 210,118 302,189" fill="none" stroke="#333" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+
+                {/* Door */}
+                <rect x="190" y="210" width="40" height="36" rx="2" fill="none" stroke="#333" strokeWidth="2" />
+                <circle cx="225" cy="228" r="2.5" fill="#333" />
+
+                {/* Window left */}
+                <rect x="145" y="200" width="30" height="24" rx="2" fill="none" stroke="#333" strokeWidth="1.8" />
+                <line x1="160" y1="200" x2="160" y2="224" stroke="#333" strokeWidth="1.2" />
+                <line x1="145" y1="212" x2="175" y2="212" stroke="#333" strokeWidth="1.2" />
+
+                {/* Window right */}
+                <rect x="245" y="200" width="30" height="24" rx="2" fill="none" stroke="#333" strokeWidth="1.8" />
+                <line x1="260" y1="200" x2="260" y2="224" stroke="#333" strokeWidth="1.2" />
+                <line x1="245" y1="212" x2="275" y2="212" stroke="#333" strokeWidth="1.2" />
+
+                {/* Heat arrows (showing energy saving) */}
+                <g stroke="#C8A87C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.85">
+                  <line x1="315" y1="170" x2="332" y2="170" />
+                  <polyline points="327,165 332,170 327,175" />
+                  <line x1="315" y1="185" x2="332" y2="185" />
+                  <polyline points="327,180 332,185 327,190" />
+                  <line x1="315" y1="200" x2="332" y2="200" />
+                  <polyline points="327,195 332,200 327,205" />
+                </g>
+
+                {/* Label: Wärmeschutz */}
+                <rect x="334" y="158" width="72" height="56" rx="6" fill="var(--color-primary, #2D5016)" opacity="0.92" />
+                <text x="370" y="177" textAnchor="middle" fill="#FAF7F2" fontSize="7.5" fontFamily="sans-serif" fontWeight="600" letterSpacing="0.5">WÄRME</text>
+                <text x="370" y="188" textAnchor="middle" fill="#FAF7F2" fontSize="7.5" fontFamily="sans-serif" fontWeight="600" letterSpacing="0.5">SCHUTZ</text>
+                <line x1="347" y1="194" x2="393" y2="194" stroke="rgba(250,247,242,0.3)" strokeWidth="1" />
+                <text x="370" y="205" textAnchor="middle" fill="rgba(250,247,242,0.85)" fontSize="11" fontFamily="sans-serif" fontWeight="700">✓</text>
+
+                {/* Clipboard person right */}
+                <circle cx="88" cy="210" r="11" fill="none" stroke="#333" strokeWidth="2" />
+                <line x1="88" y1="221" x2="88" y2="241" stroke="#333" strokeWidth="2" strokeLinecap="round" />
+                <line x1="88" y1="229" x2="75" y2="238" stroke="#333" strokeWidth="2" strokeLinecap="round" />
+                <line x1="88" y1="229" x2="101" y2="236" stroke="#333" strokeWidth="2" strokeLinecap="round" />
+                <line x1="88" y1="241" x2="82" y2="248" stroke="#333" strokeWidth="2" strokeLinecap="round" />
+                <line x1="88" y1="241" x2="94" y2="248" stroke="#333" strokeWidth="2" strokeLinecap="round" />
+                {/* Clipboard */}
+                <rect x="100" y="226" width="14" height="18" rx="2" fill="none" stroke="#333" strokeWidth="1.8" />
+                <rect x="104" y="223" width="6" height="5" rx="1" fill="none" stroke="#333" strokeWidth="1.5" />
+                <line x1="102" y1="232" x2="112" y2="232" stroke="#333" strokeWidth="1.3" />
+                <line x1="102" y1="237" x2="112" y2="237" stroke="#333" strokeWidth="1.3" />
+                <line x1="102" y1="242" x2="108" y2="242" stroke="#333" strokeWidth="1.3" />
+              </svg>
             </div>
-
           </div>
         </div>
       </section>
