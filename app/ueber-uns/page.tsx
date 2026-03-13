@@ -157,7 +157,7 @@ export default function UeberUnsPage() {
                 src="/portrait.png.png"
                 alt="Planungsbüro Bless – Christopher Bless"
                 fill
-                style={{ objectFit: "cover", objectPosition: "center top" }}
+                style={{ objectFit: "contain", objectPosition: "center center" }}
                 priority
               />
             </div>
