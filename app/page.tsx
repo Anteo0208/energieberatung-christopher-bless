@@ -69,8 +69,8 @@ const services = [
 ];
 
 const stats = [
-  { value: "15+", label: "Jahre Erfahrung" },
-  { value: "300+", label: "Projekte abgeschlossen" },
+  { value: "10", label: "Jahre Erfahrung" },
+  { value: "100+", label: "Projekte abgeschlossen" },
   { value: "100%", label: "zertifiziert nach BAFA" },
 ];
 
