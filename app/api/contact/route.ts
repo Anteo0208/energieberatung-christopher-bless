@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
   try {
     await transporter.sendMail({
     from: `"Website Kontaktformular" <${process.env.SMTP_USER}>`,
-    to: "jbless@energieberatung-bless.de",
+    to: "info@planungsbuero-bless.de",
     replyTo: email,
     subject: `Neue Anfrage von ${name}${leistung ? ` – ${leistung}` : ""}`,
     html: `

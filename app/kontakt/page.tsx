@@ -59,7 +59,7 @@ export default function KontaktPage() {
       if (!res.ok) throw new Error("Fehler beim Senden.");
       setSubmitted(true);
     } catch {
-      setError("Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an jbless@energieberatung-bless.de");
+      setError("Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an info@planungsbuero-bless.de");
     } finally {
       setLoading(false);
     }
@@ -317,7 +317,7 @@ export default function KontaktPage() {
                       </svg>
                     ),
                     label: "E-Mail",
-                    value: "jbless@energieberatung-bless.de",
+                    value: "info@planungsbuero-bless.de",
                   },
                   {
                     icon: (
