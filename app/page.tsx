@@ -252,7 +252,7 @@ export default function Home() {
                 <rect width="420" height="315" fill="#F5F0E8" />
 
                 {/* ── Header ── */}
-                <text x="22" y="30" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2" fill="#8B4513" textAnchor="start">INDIVIDUELLER SANIERUNGSFAHRPLAN</text>
+                <text x="22" y="30" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2" fill="#8B4513" textAnchor="start">FAHRPLAN</text>
                 <line x1="22" y1="38" x2="398" y2="38" stroke="#D4C9B8" strokeWidth="1" />
 
                 {/* ── LEFT: mini house with numbered measure pointers ── */}
