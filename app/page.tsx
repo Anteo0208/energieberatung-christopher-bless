@@ -66,6 +66,18 @@ const services = [
     description: "Ganzheitliche Begleitung bei der Effizienzhaussanierung und Effizienzhaus-Neubauplanung bis zur Fertigstellung.",
     href: "/leistungen#effizienzhaus",
   },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="4" y="4" width="24" height="24" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4 12h24M10 12v16M22 12v16M4 20h6M22 20h6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: "Wärmeschutznachweis",
+    subtitle: "Gebäudeklassen 1 & 2",
+    description: "Erstellung des baulichen Wärmeschutznachweises für Wohn- und Nichtwohngebäude der Gebäudeklassen 1 und 2.",
+    href: "/leistungen#waermeschutz",
+  },
 ];
 
 const stats = [

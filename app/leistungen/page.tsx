@@ -98,6 +98,24 @@ const services = [
     benefit: "Bis zu 45.000 € Zuschuss pro Wohneinheit",
     color: "#8B4513",
   },
+  {
+    id: "waermeschutz",
+    number: "06",
+    title: "Wärmeschutznachweis",
+    norm: "GEG § 26b",
+    tagline: "Rechtssicherer Nachweis für Gebäudeklassen 1 & 2",
+    description: `Der bauliche Wärmeschutznachweis ist für Neubauten und wesentliche Änderungen an Bestandsgebäuden gesetzlich vorgeschrieben.
+    Wir erstellen den vollständigen Nachweis nach GEG für Wohn- und Nichtwohngebäude der Gebäudeklassen 1 und 2 – rechtssicher, normgerecht und baugenehmigungsfähig.`,
+    details: [
+      "Berechnung des Jahres-Primärenergiebedarfs",
+      "Nachweis des baulichen Mindestwärmeschutzes",
+      "Transmissionswärmeverlust nach GEG",
+      "Sommerlicher Wärmeschutz nach DIN 4108-2",
+      "Erstellung aller baugenehmigungsrelevanten Unterlagen",
+    ],
+    benefit: "Pflichtnachweis für Baugenehmigung und Förderprogramme",
+    color: "#2D5016",
+  },
 ];
 
 function useInView(threshold = 0.1) {

@@ -16,6 +16,7 @@ const STEPS = [
       { value: "Sanierungsfahrplan", label: "Sanierungs­fahrplan", icon: "📋", hint: "Individueller iSFP" },
       { value: "Einzelmaßnahmen", label: "Einzel­maßnahmen", icon: "🔧", hint: "BAFA-Förderung" },
       { value: "Effizienzhaus", label: "Effizienzhaus", icon: "🏡", hint: "Sanierung & Neubau" },
+      { value: "Wärmeschutznachweis", label: "Wärme­schutz­nachweis", icon: "📐", hint: "Gebäudeklassen 1 & 2" },
       { value: "Allgemeine Beratung", label: "Allgemeine Beratung", icon: "💬", hint: "Erstgespräch" },
     ],
   },
