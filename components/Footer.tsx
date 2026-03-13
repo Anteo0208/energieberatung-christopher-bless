@@ -65,15 +65,16 @@ export default function Footer() {
           </div>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             {[
-              "Heizlastberechnung",
-              "Hydraulischer Abgleich",
-              "Sanierungsfahrplan",
-              "Einzelmaßnahmen",
-              "Effizienzhaus",
+              { label: "Heizlastberechnung", id: "heizlast" },
+              { label: "Hydraulischer Abgleich", id: "hydraulik" },
+              { label: "Sanierungsfahrplan", id: "fahrplan" },
+              { label: "Einzelmaßnahmen", id: "einzelmassnahmen" },
+              { label: "Effizienzhaus", id: "effizienzhaus" },
+              { label: "Wärmeschutznachweis", id: "waermeschutz" },
             ].map((item) => (
-              <li key={item}>
+              <li key={item.id}>
                 <Link
-                  href="/leistungen"
+                  href={`/leistungen#${item.id}`}
                   style={{
                     color: "rgba(250,247,242,0.7)",
                     textDecoration: "none",
@@ -81,7 +82,7 @@ export default function Footer() {
                     transition: "color 0.2s",
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               </li>
             ))}
