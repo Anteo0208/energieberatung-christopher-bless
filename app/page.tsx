@@ -332,7 +332,7 @@ export default function Home() {
                 {/* ── Legend box bottom left ── */}
                 <rect x="22" y="282" width="176" height="24" rx="5" fill="rgba(45,80,22,0.08)" />
                 <text x="110" y="290" textAnchor="middle" fontFamily="sans-serif" fontSize="7" fontWeight="600" fill="#2D5016" letterSpacing="0.5">FÖRDERFÄHIG NACH GEG</text>
-                <text x="110" y="300" textAnchor="middle" fontFamily="sans-serif" fontSize="7.5" fill="#2D5016">Bis zu 15 % iSFP-Bonus</text>
+                <text x="110" y="300" textAnchor="middle" fontFamily="sans-serif" fontSize="7.5" fill="#2D5016">Bis zu 20 % Förderung</text>
 
                 {/* ── Energy class strip bottom right ── */}
                 <rect x="222" y="282" width="176" height="24" rx="5" fill="#2D5016" />
