@@ -292,38 +292,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS */}
-      <div ref={statsRef} style={{ background: "var(--color-primary)", padding: "2.5rem 2rem" }}>
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "2rem",
-          }}
-          className="stats-grid"
-        >
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              style={{
-                textAlign: "center",
-                opacity: statsInView ? 1 : 0,
-                transform: statsInView ? "translateY(0)" : "translateY(20px)",
-                transition: `opacity 0.5s ease ${i * 0.12}s, transform 0.5s ease ${i * 0.12}s`,
-              }}
-            >
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2.5rem", fontWeight: 700, color: "#FAF7F2", lineHeight: 1, marginBottom: "0.5rem" }}>
-                {stat.value}
-              </div>
-              <div style={{ fontSize: "0.85rem", color: "rgba(250,247,242,0.65)" }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* LEISTUNGEN */}
       <section ref={servicesRef} style={{ padding: "7rem 2rem", background: "var(--color-background)" }}>
