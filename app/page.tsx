@@ -252,8 +252,9 @@ export default function Home() {
                 <rect width="420" height="315" fill="#F5F0E8" />
 
                 {/* ── Header ── */}
-                <text x="22" y="30" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2" fill="#8B4513" textAnchor="start">FAHRPLAN</text>
-                <line x1="22" y1="38" x2="398" y2="38" stroke="#D4C9B8" strokeWidth="1" />
+                <text x="22" y="22" fontFamily="sans-serif" fontSize="7" fontWeight="700" letterSpacing="1.5" fill="#8B4513" textAnchor="start">VORTEILE DURCH BEAUFTRAGUNG</text>
+                <text x="22" y="33" fontFamily="sans-serif" fontSize="7" fontWeight="700" letterSpacing="1.5" fill="#8B4513" textAnchor="start">EINES ENERGIEBERATERS</text>
+                <line x1="22" y1="41" x2="398" y2="41" stroke="#D4C9B8" strokeWidth="1" />
 
                 {/* ── LEFT: mini house with numbered measure pointers ── */}
                 {/* House body */}
@@ -270,25 +271,25 @@ export default function Home() {
                 {/* Ground */}
                 <line x1="22" y1="248" x2="198" y2="248" stroke="#333" strokeWidth="2" strokeLinecap="round" />
 
-                {/* Measure pointer: ① Dach / Dämmung */}
+                {/* Measure pointer: ① Dach */}
                 <circle cx="28" cy="108" r="9" fill="#2D5016" />
                 <text x="28" y="112" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">1</text>
-                <line x1="37" y1="108" x2="76" y2="130" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
+                <line x1="37" y1="108" x2="94" y2="122" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
 
                 {/* Measure pointer: ② Fassade */}
-                <circle cx="22" cy="190" r="9" fill="#2D5016" />
-                <text x="22" y="194" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">2</text>
-                <line x1="31" y1="190" x2="48" y2="190" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
+                <circle cx="22" cy="200" r="9" fill="#2D5016" />
+                <text x="22" y="204" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">2</text>
+                <line x1="31" y1="200" x2="48" y2="200" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
 
-                {/* Measure pointer: ③ Fenster */}
-                <circle cx="48" cy="268" r="9" fill="#2D5016" />
-                <text x="48" y="272" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">3</text>
-                <line x1="57" y1="264" x2="69" y2="250" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
+                {/* Measure pointer: ③ Fenster – points to window */}
+                <circle cx="28" cy="232" r="9" fill="#2D5016" />
+                <text x="28" y="236" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">3</text>
+                <line x1="37" y1="228" x2="56" y2="211" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
 
                 {/* Measure pointer: ④ Heizung */}
-                <circle cx="178" cy="268" r="9" fill="#2D5016" />
-                <text x="178" y="272" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">4</text>
-                <line x1="178" y1="259" x2="150" y2="248" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
+                <circle cx="190" cy="220" r="9" fill="#2D5016" />
+                <text x="190" y="224" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">4</text>
+                <line x1="181" y1="220" x2="178" y2="220" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
 
                 {/* ── DIVIDER ── */}
                 <line x1="210" y1="48" x2="210" y2="295" stroke="#D4C9B8" strokeWidth="1" />
