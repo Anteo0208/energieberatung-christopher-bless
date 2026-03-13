@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Christopher Bless – Energieberatung",
-  description: "Professionelle Energieberatung: Heizlastberechnung, Hydraulischer Abgleich, Sanierungsfahrplan und Effizienzhaus-Begleitung von Christopher Bless.",
+  title: "Planungsbüro Bless – Energieberatung",
+  description: "Professionelle Energieberatung: Heizlastberechnung, Hydraulischer Abgleich, Sanierungsfahrplan und Effizienzhaus-Begleitung. Planungsbüro Bless – Christopher Bless.",
 };
 
 export default function RootLayout({

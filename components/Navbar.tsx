@@ -59,7 +59,7 @@ export default function Navbar() {
             letterSpacing: "-0.01em",
           }}
         >
-          Christopher Bless
+          Planungsbüro Bless
           <span
             style={{
               display: "block",

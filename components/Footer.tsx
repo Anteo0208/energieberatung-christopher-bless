@@ -31,7 +31,7 @@ export default function Footer() {
               marginBottom: "0.5rem",
             }}
           >
-            Christopher Bless
+            Planungsbüro Bless
           </div>
           <div
             style={{
@@ -102,8 +102,8 @@ export default function Footer() {
             Kontakt
           </div>
           <div style={{ fontSize: "0.9rem", opacity: 0.8, lineHeight: 2 }}>
+            <div>Planungsbüro Bless</div>
             <div>Christopher Bless</div>
-            <div>Energieberatung</div>
             <div style={{ marginTop: "0.75rem" }}>
               <Link href="/kontakt" style={{ color: "var(--color-accent, #C8A96E)", textDecoration: "none" }}>
                 Beratung anfragen →
@@ -127,9 +127,9 @@ export default function Footer() {
           opacity: 0.5,
         }}
       >
-        <span>© {new Date().getFullYear()} Christopher Bless Energieberatung</span>
+        <span>© {new Date().getFullYear()} Planungsbüro Bless</span>
         <div style={{ display: "flex", gap: "1.5rem" }}>
-          <Link href="#" style={{ color: "inherit", textDecoration: "none" }}>Impressum</Link>
+          <Link href="/impressum" style={{ color: "inherit", textDecoration: "none" }}>Impressum</Link>
           <Link href="#" style={{ color: "inherit", textDecoration: "none" }}>Datenschutz</Link>
         </div>
       </div>
