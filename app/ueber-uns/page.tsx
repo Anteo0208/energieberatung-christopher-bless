@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const qualifications = [
   {
-    label: "Energieberater",
-    detail: "Zugelassen nach Marktstammdatenregister",
+    label: "Gebäudeenergieberater (HWK)",
+    detail: "Geprüft von der Handwerkskammer Düsseldorf",
     icon: "✦",
   },
   {
@@ -21,8 +21,8 @@ const qualifications = [
     icon: "✦",
   },
   {
-    label: "Energieausweis-Aussteller",
-    detail: "Berechtigt nach GEG § 88",
+    label: "Staatlich geprüfter Hochbautechniker",
+    detail: "Fachkenntnisse in Baukonstruktion und Bauphysik",
     icon: "✦",
   },
 ];
@@ -34,11 +34,11 @@ const values = [
   },
   {
     title: "Unabhängigkeit",
-    text: "Ich bin keinem Hersteller oder Handwerker verpflichtet. Meine Beratung orientiert sich ausschließlich an Ihren Interessen.",
+    text: "Wir sind keinem Hersteller oder Handwerker verpflichtet. Unsere Beratung orientiert sich ausschließlich an Ihren Interessen.",
   },
   {
     title: "Verlässlichkeit",
-    text: "Von der ersten Beratung bis zum abschließenden Verwendungsnachweis stehe ich an Ihrer Seite.",
+    text: "Von der ersten Beratung bis zum abschließenden Verwendungsnachweis stehen wir an Ihrer Seite.",
   },
 ];
 
@@ -58,7 +58,7 @@ function useInView(threshold = 0.1) {
   return { ref, inView };
 }
 
-export default function UeberMichPage() {
+export default function UeberUnsPage() {
   const { ref: introRef, inView: introInView } = useInView();
   const { ref: valuesRef, inView: valuesInView } = useInView();
   const { ref: qualRef, inView: qualInView } = useInView();
@@ -99,7 +99,7 @@ export default function UeberMichPage() {
             }}
           >
             <div style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-secondary)", marginBottom: "1rem", fontWeight: 500 }}>
-              Über mich
+              Über uns
             </div>
             <h1
               style={{
@@ -111,7 +111,7 @@ export default function UeberMichPage() {
                 marginBottom: "1.5rem",
               }}
             >
-              Christopher Bless –
+              Planungsbüro Bless –
               <br />
               <em style={{ color: "var(--color-primary)", fontStyle: "italic" }}>Ihr Energieberater</em>
             </h1>
@@ -120,8 +120,8 @@ export default function UeberMichPage() {
               Gebäude wirklich zu verstehen – die Physik, die Technik, die Menschen, die darin leben.
             </p>
             <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
-              Mit über 15 Jahren Erfahrung in der energetischen Gebäudeberatung kenne ich die Fallstricke
-              und Potenziale eines jeden Sanierungsprojekts. Ich berate Sie nicht nur – ich begleite Sie.
+              Mit über 15 Jahren Erfahrung in der energetischen Gebäudeberatung kennen wir die Fallstricke
+              und Potenziale eines jeden Sanierungsprojekts. Wir beraten Sie nicht nur – wir begleiten Sie.
             </p>
             <Link
               href="/kontakt"
@@ -145,7 +145,7 @@ export default function UeberMichPage() {
             </Link>
           </div>
 
-          {/* Portrait placeholder */}
+          {/* Portrait */}
           <div style={{ position: "relative" }}>
             <div
               style={{
@@ -164,7 +164,7 @@ export default function UeberMichPage() {
             >
               <Image
                 src="/portrait.jpg.webp"
-                alt="Christopher Bless – Energieberater"
+                alt="Planungsbüro Bless – Energieberatung"
                 fill
                 style={{ objectFit: "cover", borderRadius: "16px" }}
                 sizes="(max-width: 768px) 100vw, 400px"
@@ -183,7 +183,7 @@ export default function UeberMichPage() {
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div style={{ marginBottom: "3.5rem" }}>
             <div style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-secondary)", marginBottom: "1rem", fontWeight: 500 }}>
-              Meine Grundsätze
+              Unsere Grundsätze
             </div>
             <h2
               style={{
@@ -194,7 +194,7 @@ export default function UeberMichPage() {
               }}
               className="line-accent"
             >
-              Wofür ich stehe
+              Wofür wir stehen
             </h2>
           </div>
 
@@ -253,7 +253,7 @@ export default function UeberMichPage() {
               Qualifikationen
             </h2>
             <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", lineHeight: 1.75 }}>
-              Als zugelassener Energieberater bin ich berechtigt, alle erforderlichen Nachweise
+              Als zugelassenes Planungsbüro sind wir berechtigt, alle erforderlichen Nachweise
               und Bestätigungen für Förderprogramme von BAFA und KfW zu erstellen.
             </p>
           </div>
