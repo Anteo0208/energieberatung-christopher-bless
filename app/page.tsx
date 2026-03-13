@@ -242,7 +242,7 @@ export default function Home() {
                 border: "1px solid var(--color-border)",
                 borderRadius: "20px",
                 width: "100%",
-                maxWidth: "560px",
+                maxWidth: "650px",
                 aspectRatio: "4/3",
                 overflow: "hidden",
                 boxShadow: "0 20px 60px rgba(45,80,22,0.1)",

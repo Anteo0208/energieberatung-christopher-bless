@@ -136,6 +136,18 @@ function useInView(threshold = 0.1) {
 
 export default function LeistungenPage() {
   const { ref: heroRef, inView: heroInView } = useInView(0.1);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const hash = window.location.hash?.replace("#", "");
+    if (!hash) return;
+    window.scrollTo({ top: 0, behavior: "instant" });
+    setActiveId(hash);
+    setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 600);
+  }, []);
 
   return (
     <>
@@ -201,7 +213,7 @@ export default function LeistungenPage() {
       <section style={{ padding: "2rem 2rem 7rem", background: "var(--color-background)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "2px" }}>
           {services.map((service, i) => (
-            <ServiceEntry key={service.id} service={service} index={i} />
+            <ServiceEntry key={service.id} service={service} index={i} defaultExpanded={activeId === service.id} />
           ))}
         </div>
       </section>
@@ -255,9 +267,13 @@ export default function LeistungenPage() {
   );
 }
 
-function ServiceEntry({ service, index }: { service: typeof services[0]; index: number }) {
+function ServiceEntry({ service, index, defaultExpanded = false }: { service: typeof services[0]; index: number; defaultExpanded?: boolean }) {
   const { ref, inView } = useInView(0.1);
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    if (defaultExpanded) setExpanded(true);
+  }, [defaultExpanded]);
 
   return (
     <div
@@ -272,6 +288,7 @@ function ServiceEntry({ service, index }: { service: typeof services[0]; index: 
         transform: inView ? "translateY(0)" : "translateY(24px)",
         transition: `opacity 0.5s ease ${index * 0.06}s, transform 0.5s ease ${index * 0.06}s, background 0.2s`,
         marginBottom: "1rem",
+        scrollMarginTop: "120px",
       }}
     >
       <button
