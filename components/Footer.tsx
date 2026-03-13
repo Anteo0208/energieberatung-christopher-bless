@@ -130,7 +130,7 @@ export default function Footer() {
         <span>© {new Date().getFullYear()} Planungsbüro Bless</span>
         <div style={{ display: "flex", gap: "1.5rem" }}>
           <Link href="/impressum" style={{ color: "inherit", textDecoration: "none" }}>Impressum</Link>
-          <Link href="#" style={{ color: "inherit", textDecoration: "none" }}>Datenschutz</Link>
+          <Link href="/datenschutz" style={{ color: "inherit", textDecoration: "none" }}>Datenschutz</Link>
         </div>
       </div>
     </footer>
