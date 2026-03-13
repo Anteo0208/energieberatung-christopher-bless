@@ -8,9 +8,9 @@ const services = [
     id: "heizlast",
     number: "01",
     title: "Heizlastberechnung",
-    norm: "nach DIN TS 12831:2020",
+    norm: "nach DIN TS 12831",
     tagline: "Die Basis für jede effiziente Heizungsanlage",
-    description: `Die Heizlastberechnung nach DIN TS 12831:2020 ist das Fundament einer korrekt ausgelegten Heizungsanlage.
+    description: `Die Heizlastberechnung nach DIN TS 12831 ist das Fundament einer korrekt ausgelegten Heizungsanlage.
     Sie ermittelt präzise, wie viel Wärme ein Gebäude unter Normbedingungen maximal benötigt – Raum für Raum.`,
     details: [
       "Raumweise Berechnung des Wärmebedarfs",

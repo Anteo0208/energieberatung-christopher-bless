@@ -13,7 +13,7 @@ const services = [
       </svg>
     ),
     title: "Heizlastberechnung",
-    subtitle: "nach DIN TS 12831:2020",
+    subtitle: "nach DIN TS 12831",
     description: "Präzise Ermittlung des Wärmebedarfs Ihres Gebäudes als Grundlage für die optimale Heizungsauslegung.",
     href: "/leistungen#heizlast",
   },

@@ -11,7 +11,7 @@ const STEPS = [
     subtitle: "Wählen Sie die Leistung, die Sie interessiert.",
     type: "cards",
     options: [
-      { value: "Heizlastberechnung", label: "Heizlast­berechnung", icon: "🌡️", hint: "DIN TS 12831:2020" },
+      { value: "Heizlastberechnung", label: "Heizlast­berechnung", icon: "🌡️", hint: "DIN TS 12831" },
       { value: "Hydraulischer Abgleich", label: "Hydraulischer Abgleich", icon: "⚙️", hint: "Verfahren B" },
       { value: "Sanierungsfahrplan", label: "Sanierungs­fahrplan", icon: "📋", hint: "Individueller iSFP" },
       { value: "Einzelmaßnahmen", label: "Einzel­maßnahmen", icon: "🔧", hint: "BAFA-Förderung" },
