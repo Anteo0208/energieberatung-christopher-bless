@@ -20,7 +20,7 @@ const services = [
       "Dokumentation nach aktuellem Normenstand",
     ],
     benefit: "Verhindert Über- oder Unterdimensionierung der Heizung",
-    color: "#2D5016",
+    color: "#8B4513",
   },
   {
     id: "hydraulik",
@@ -39,7 +39,7 @@ const services = [
       "Nachweis und Protokollierung für den Fördermittelantrag",
     ],
     benefit: "Reduziert Heizkosten um bis zu 15 %",
-    color: "#2D5016",
+    color: "#8B4513",
   },
   {
     id: "fahrplan",
@@ -58,7 +58,7 @@ const services = [
       "5 % zusätzliche Förderung bei Umsetzung nach iSFP-Stufen",
     ],
     benefit: "+5 % Förderbonus bei stufenweiser Sanierung",
-    color: "#2D5016",
+    color: "#8B4513",
   },
   {
     id: "einzelmassnahmen",
@@ -114,7 +114,7 @@ const services = [
       "Erstellung aller baugenehmigungsrelevanten Unterlagen",
     ],
     benefit: "Pflichtnachweis für Baugenehmigung und Förderprogramme",
-    color: "#2D5016",
+    color: "#8B4513",
   },
 ];
 
