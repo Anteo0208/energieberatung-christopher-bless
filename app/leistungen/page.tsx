@@ -116,6 +116,42 @@ const services = [
     benefit: "Pflichtnachweis für Baugenehmigung und Förderprogramme",
     color: "#8B4513",
   },
+  {
+    id: "lca",
+    number: "07",
+    title: "Lebenszyklusanalyse (LCA)",
+    norm: "DIN EN 15978 / ÖKOBAUDAT",
+    tagline: "Ökologische Bewertung über den gesamten Lebenszyklus",
+    description: `Die Lebenszyklusanalyse (LCA) bewertet die Umweltwirkungen eines Gebäudes von der Herstellung der Baustoffe bis zum Rückbau.
+    Sie ist Pflichtbestandteil für das Qualitätssiegel Nachhaltiges Gebäude (QNG) sowie für die KfW-Förderung klimafreundlicher Neubauten.`,
+    details: [
+      "Berechnung der Treibhausgasemissionen (GWP) über den Lebenszyklus",
+      "Ermittlung des Primärenergiebedarfs (nicht erneuerbar)",
+      "Nachweisführung nach GEG § 10b / QNG-Anforderungen",
+      "Datenbankbasierte Baustoffbewertung nach ÖKOBAUDAT",
+      "Dokumentation für Fördermittelanträge (KfW Klimabonus)",
+    ],
+    benefit: "Pflichtnachweis für QNG-Siegel und KfW-Klimabonus",
+    color: "#8B4513",
+  },
+  {
+    id: "waermebruecken",
+    number: "08",
+    title: "Detaillierte Wärmebrückenberechnung",
+    norm: "DIN ISO 10211",
+    tagline: "Präzise Analyse für optimale Dämmung und Schimmelschutz",
+    description: `Wärmebrücken sind kritische Stellen in der Gebäudehülle, an denen erhöhter Wärmeverlust und Kondensationsgefahr bestehen.
+    Die detaillierte Berechnung nach DIN ISO 10211 ermittelt exakte Wärmebrückenzuschläge für alle relevanten Konstruktionsdetails – für mehr Energieeffizienz und dauerhaften Schimmelschutz.`,
+    details: [
+      "2D/3D-Berechnung von Wärmebrücken nach DIN ISO 10211",
+      "Ermittlung des längenbezogenen Wärmedurchgangskoeffizienten (Ψ-Wert)",
+      "Nachweis des Tauwasserausfalls und Schimmelschutz",
+      "Optimierung von Anschlussdetails (Fenster, Attika, Bodenplatte)",
+      "Verbesserung des Energieausweises durch Reduktion der Wärmeverluste",
+    ],
+    benefit: "Schimmelfreiheit und bis zu 10 % besserer Energieausweis",
+    color: "#8B4513",
+  },
 ];
 
 function useInView(threshold = 0.1) {

@@ -78,6 +78,32 @@ const services = [
     description: "Erstellung des baulichen Wärmeschutznachweises für Wohn- und Nichtwohngebäude der Gebäudeklassen 1 und 2.",
     href: "/leistungen#waermeschutz",
   },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M6 26V10l10-6 10 6v16" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="16" cy="16" r="4" />
+        <path d="M16 6v6M16 20v6M6 16h6M20 16h6" strokeLinecap="round" />
+      </svg>
+    ),
+    title: "Lebenszyklusanalyse (LCA)",
+    subtitle: "DIN EN 15978 / ÖKOBAUDAT",
+    description: "Ökologische Bewertung des Gebäudes über den gesamten Lebenszyklus – Pflichtnachweis für QNG-Siegel und KfW-Klimabonus.",
+    href: "/leistungen#lca",
+  },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="4" y="8" width="24" height="16" rx="2" />
+        <path d="M4 14h24M4 20h24" strokeLinecap="round" />
+        <path d="M10 8v16M22 8v16" strokeLinecap="round" strokeDasharray="2,2" />
+      </svg>
+    ),
+    title: "Wärmebrückenberechnung",
+    subtitle: "DIN ISO 10211",
+    description: "Präzise 2D/3D-Berechnung von Wärmebrücken für optimale Dämmung, Schimmelschutz und besseren Energieausweis.",
+    href: "/leistungen#waermebruecken",
+  },
 ];
 
 const stats = [

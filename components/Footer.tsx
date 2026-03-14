@@ -71,6 +71,8 @@ export default function Footer() {
               { label: "Einzelmaßnahmen", id: "einzelmassnahmen" },
               { label: "Effizienzhaus", id: "effizienzhaus" },
               { label: "Wärmeschutznachweis", id: "waermeschutz" },
+              { label: "Lebenszyklusanalyse (LCA)", id: "lca" },
+              { label: "Wärmebrückenberechnung", id: "waermebruecken" },
             ].map((item) => (
               <li key={item.id}>
                 <Link
