@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -47,6 +48,15 @@ export default function Footer() {
           <p style={{ fontSize: "0.9rem", opacity: 0.75, lineHeight: 1.7 }}>
             Zertifizierter Energieberater für nachhaltige Gebäudesanierung und Effizienzoptimierung.
           </p>
+          <div style={{ marginTop: "1.5rem" }}>
+            <Image
+              src="/dena.png"
+              alt="Deutsche Energie-Agentur (dena)"
+              width={120}
+              height={48}
+              style={{ objectFit: "contain", opacity: 0.85 }}
+            />
+          </div>
         </div>
 
         {/* Leistungen */}
