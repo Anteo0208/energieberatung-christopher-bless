@@ -1,83 +1,83 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import PDFDocument from "pdfkit";
+import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-async function generatePDF(data: Record<string, string>): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const doc = new PDFDocument({ margin: 50, size: "A4" });
-    const chunks: Buffer[] = [];
+const PRIMARY = rgb(0.176, 0.314, 0.086); // #2D5016
+const MUTED = rgb(0.42, 0.42, 0.353);     // #6B6B5A
+const DARK = rgb(0.11, 0.11, 0.11);       // #1C1C1C
+const LIGHT_BG = rgb(0.98, 0.97, 0.949);  // #FAF7F2
+const BORDER = rgb(0.91, 0.894, 0.863);   // #E8E4DC
 
-    doc.on("data", (chunk: Buffer) => chunks.push(chunk));
-    doc.on("end", () => resolve(Buffer.concat(chunks)));
-    doc.on("error", reject);
+async function generatePDF(data: Record<string, string>): Promise<Uint8Array> {
+  const pdfDoc = await PDFDocument.create();
+  const page = pdfDoc.addPage([595, 842]); // A4
+  const { height } = page.getSize();
 
-    const PRIMARY = "#2D5016";
-    const MUTED = "#6B6B5A";
-    const BORDER = "#E8E4DC";
+  const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+  const fontRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
-    // Header
-    doc.rect(0, 0, doc.page.width, 80).fill(PRIMARY);
-    doc.fillColor("#FAF7F2").fontSize(22).font("Helvetica-Bold")
-      .text("Erfassungsbogen", 50, 25);
-    doc.fillColor("#FAF7F2").fontSize(10).font("Helvetica")
-      .text("Planungsbüro Bless – Energieberatung", 50, 52);
-    doc.moveDown(2);
+  let y = height - 50;
 
-    function section(title: string) {
-      doc.moveDown(0.5);
-      doc.fillColor(PRIMARY).fontSize(11).font("Helvetica-Bold").text(title.toUpperCase(), { characterSpacing: 1 });
-      doc.moveTo(50, doc.y + 4).lineTo(doc.page.width - 50, doc.y + 4).strokeColor(BORDER).lineWidth(1).stroke();
-      doc.moveDown(0.75);
-    }
+  // Header bar
+  page.drawRectangle({ x: 0, y: height - 70, width: 595, height: 70, color: PRIMARY });
+  page.drawText("Erfassungsbogen", { x: 50, y: height - 35, size: 20, font: fontBold, color: rgb(0.98, 0.97, 0.949) });
+  page.drawText("Planungsbüro Bless – Energieberatung", { x: 50, y: height - 55, size: 9, font: fontRegular, color: rgb(0.98, 0.97, 0.949) });
 
-    function field(label: string, value: string) {
-      if (!value) return;
-      const y = doc.y;
-      doc.fillColor(MUTED).fontSize(9).font("Helvetica").text(label, 50, y, { width: 180 });
-      doc.fillColor("#1C1C1C").fontSize(10).font("Helvetica").text(value || "–", 240, y, { width: 300 });
-      doc.moveDown(0.6);
-    }
+  y = height - 100;
 
-    // Persönliche Daten
-    section("Persönliche Daten");
-    field("Vorname", data.vorname);
-    field("Nachname", data.nachname);
-    field("Straße / Hausnummer", `${data.strasse} ${data.hausnummer}`);
-    field("PLZ / Ort", `${data.plz} ${data.ort}`);
-    field("Geburtsdatum", data.geburtsdatum);
-    field("Geburtsort", data.geburtsort);
+  function sectionTitle(title: string) {
+    y -= 14;
+    page.drawText(title.toUpperCase(), { x: 50, y, size: 9, font: fontBold, color: PRIMARY, opacity: 0.9 });
+    y -= 8;
+    page.drawLine({ start: { x: 50, y }, end: { x: 545, y }, thickness: 0.5, color: BORDER });
+    y -= 14;
+  }
 
-    // Bankdaten
-    section("Bankdaten & Steuer");
-    field("IBAN", data.iban);
-    field("BIC", data.bic);
-    field("Steueridentifikationsnummer", data.steuerIdNr);
+  function field(label: string, value: string) {
+    if (!value) return;
+    page.drawText(label, { x: 50, y, size: 8.5, font: fontRegular, color: MUTED });
+    page.drawText(value, { x: 230, y, size: 9, font: fontRegular, color: DARK });
+    y -= 16;
+  }
 
-    // Kontakt
-    section("Kontakt");
-    field("Telefon", data.telefon);
-    field("E-Mail", data.email);
+  // Persönliche Daten
+  sectionTitle("Persönliche Daten");
+  field("Vorname", data.vorname);
+  field("Nachname", data.nachname);
+  field("Straße / Hausnummer", `${data.strasse} ${data.hausnummer}`);
+  field("PLZ / Ort", `${data.plz} ${data.ort}`);
+  field("Geburtsdatum", data.geburtsdatum);
+  field("Geburtsort", data.geburtsort);
 
-    // Gebäude
-    section("Gebäude / Objekt");
-    field("Straße / Hausnummer", `${data.gebaeudeStrasse} ${data.gebaeudeHausnummer}`);
-    field("PLZ / Ort", `${data.gebaeudePlz} ${data.gebaeudeOrt}`);
-    field("Datum Bauantrag / Baujahr", data.baujahr);
-    field("Wohn- / Gewerbeeinheiten", data.wohneinheiten);
+  // Bankdaten
+  sectionTitle("Bankdaten & Steuer");
+  field("IBAN", data.iban);
+  field("BIC", data.bic);
+  field("Steueridentifikationsnummer", data.steuerIdNr);
 
-    // Footer
-    const footerY = doc.page.height - 50;
-    doc.moveTo(50, footerY - 10).lineTo(doc.page.width - 50, footerY - 10).strokeColor(BORDER).lineWidth(1).stroke();
-    doc.fillColor(MUTED).fontSize(8).font("Helvetica")
-      .text(
-        `Planungsbüro Bless · Mülgaustraße 153a · 41199 Mönchengladbach · info@planungsbuero-bless.de`,
-        50, footerY, { align: "center", width: doc.page.width - 100 }
-      );
+  // Kontakt
+  sectionTitle("Kontakt");
+  field("Telefon", data.telefon);
+  field("E-Mail", data.email);
 
-    doc.end();
-  });
+  // Gebäude
+  sectionTitle("Gebäude / Objekt");
+  field("Straße / Hausnummer", `${data.gebaeudeStrasse} ${data.gebaeudeHausnummer}`);
+  field("PLZ / Ort", `${data.gebaeudePlz} ${data.gebaeudeOrt}`);
+  field("Datum Bauantrag / Baujahr", data.baujahr);
+  field("Wohn- / Gewerbeeinheiten", data.wohneinheiten);
+
+  // Footer
+  page.drawRectangle({ x: 0, y: 0, width: 595, height: 36, color: LIGHT_BG });
+  page.drawLine({ start: { x: 50, y: 36 }, end: { x: 545, y: 36 }, thickness: 0.5, color: BORDER });
+  page.drawText(
+    "Planungsbüro Bless · Mülgaustraße 153a · 41199 Mönchengladbach · info@planungsbuero-bless.de",
+    { x: 50, y: 14, size: 7.5, font: fontRegular, color: MUTED }
+  );
+
+  return pdfDoc.save();
 }
 
 export async function POST(req: NextRequest) {
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const pdfBuffer = await generatePDF(body);
+    const pdfBytes = await generatePDF(body);
 
     await resend.emails.send({
       from: "Erfassungsbogen <info@planungsbuero-bless.de>",
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
       attachments: [
         {
           filename: `Erfassungsbogen_${body.nachname}_${body.vorname}.pdf`,
-          content: pdfBuffer.toString("base64"),
+          content: Buffer.from(pdfBytes).toString("base64"),
         },
       ],
     });
