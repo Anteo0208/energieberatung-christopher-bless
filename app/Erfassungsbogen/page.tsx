@@ -29,6 +29,7 @@ export default function ErfassungsbogenPage() {
     wohneinheiten: "",
   });
 
+  const [dsgvo, setDsgvo] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -208,6 +209,27 @@ export default function ErfassungsbogenPage() {
               </div>
             </div>
 
+            {/* DSGVO Hinweis */}
+            <div style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "12px", padding: "1.5rem", marginBottom: "1.5rem" }}>
+              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "1rem" }}>
+                <strong style={{ color: "var(--color-text)" }}>Hinweis zur Datenverarbeitung:</strong> Ihre Angaben werden ausschließlich zur Beantragung von Fördermitteln (BAFA/KfW) durch die <strong style={{ color: "var(--color-text)" }}>Planungsbüro Bless, Mülgaustraße 153a, 41199 Mönchengladbach</strong> verwendet. Die Daten werden nach Abschluss des Auftrags gemäß gesetzlicher Aufbewahrungsfristen gelöscht und nicht an Dritte weitergegeben.
+              </p>
+              <label style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", cursor: "pointer" }}>
+                <input
+                  type="checkbox"
+                  required
+                  checked={dsgvo}
+                  onChange={(e) => setDsgvo(e.target.checked)}
+                  style={{ marginTop: "2px", width: "16px", height: "16px", accentColor: "var(--color-primary)", flexShrink: 0, cursor: "pointer" }}
+                />
+                <span style={{ fontSize: "0.875rem", color: "var(--color-text)", lineHeight: 1.6 }}>
+                  Ich stimme der Verarbeitung meiner personenbezogenen Daten (inkl. Bankdaten und Steueridentifikationsnummer) zum Zweck der Fördermittelbeantragung gemäß der{" "}
+                  <a href="/datenschutz" target="_blank" style={{ color: "var(--color-primary)", textDecoration: "underline" }}>Datenschutzerklärung</a>{" "}
+                  zu. <span style={{ color: "var(--color-secondary)" }}>*</span>
+                </span>
+              </label>
+            </div>
+
             {error && (
               <div style={{ marginBottom: "1.5rem", padding: "0.9rem 1.25rem", background: "#FEF2F2", border: "1px solid #FECACA", borderRadius: "6px", color: "#B91C1C", fontSize: "0.9rem" }}>
                 {error}
@@ -216,8 +238,8 @@ export default function ErfassungsbogenPage() {
 
             <button
               type="submit"
-              disabled={loading}
-              style={{ background: "var(--color-primary)", color: "#FAF7F2", padding: "1rem 2.5rem", borderRadius: "6px", border: "none", cursor: loading ? "not-allowed" : "pointer", fontSize: "1rem", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "'Source Sans 3', sans-serif", opacity: loading ? 0.7 : 1, transition: "opacity 0.2s" }}
+              disabled={loading || !dsgvo}
+              style={{ background: "var(--color-primary)", color: "#FAF7F2", padding: "1rem 2.5rem", borderRadius: "6px", border: "none", cursor: (loading || !dsgvo) ? "not-allowed" : "pointer", fontSize: "1rem", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "'Source Sans 3', sans-serif", opacity: (loading || !dsgvo) ? 0.5 : 1, transition: "opacity 0.2s" }}
             >
               {loading ? "Wird übermittelt …" : (
                 <>
@@ -230,7 +252,7 @@ export default function ErfassungsbogenPage() {
             </button>
 
             <p style={{ marginTop: "1.25rem", fontSize: "0.8rem", color: "var(--color-text-muted)", lineHeight: 1.6 }}>
-              Alle Angaben werden vertraulich behandelt und ausschließlich für die Beantragung von Fördermitteln verwendet.
+              Pflichtfelder sind mit <span style={{ color: "var(--color-secondary)" }}>*</span> gekennzeichnet.
             </p>
           </form>
         </div>
