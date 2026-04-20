@@ -33,7 +33,7 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
@@ -46,13 +46,21 @@ const jsonLd = {
   })),
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://www.planungsbuero-bless.de" },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: "https://www.planungsbuero-bless.de/leistungen" },
+    { "@type": "ListItem", position: 3, name: "Hydraulischer Abgleich", item: "https://www.planungsbuero-bless.de/leistungen/hydraulischer-abgleich" },
+  ],
+};
+
 export default function HydraulischerAbgleichPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav
         style={{
@@ -159,8 +167,9 @@ export default function HydraulischerAbgleichPage() {
               }}
             >
               Der hydraulische Abgleich nach Verfahren B sorgt dafür, dass jeder Heizkörper im
-              System genau die richtige Wassermenge erhält. Das Ergebnis: gleiche Raumtemperaturen
-              überall, weniger Energieverbrauch und ein deutlich leistungsfähigeres Heizsystem.
+              System genau die richtige Wassermenge erhält. In Mönchengladbach begleitet Christopher
+              Bless Eigentümer durch den gesamten Prozess – von der raumweisen Heizlastberechnung
+              bis zur normgerechten Dokumentation für den Förderantrag.
             </p>
             <div
               style={{
@@ -232,6 +241,87 @@ export default function HydraulischerAbgleichPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Erweiterter Inhalt */}
+      <section style={{ padding: "4rem 2rem", background: "var(--color-background)" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem", marginTop: "0" }}>
+            Was ist ein Hydraulischer Abgleich?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Bei einem hydraulischen Abgleich wird die Heizungsanlage so eingestellt, dass jeder
+            Heizkörper und jeder Heizkreis exakt die Wassermenge erhält, die er für die gewünschte
+            Raumtemperatur benötigt – nicht mehr und nicht weniger. Ohne diesen Abgleich sind
+            Heizungsanlagen häufig ungleichmäßig versorgt: Heizkörper in Kesselnähe werden
+            überheizt, entfernte Räume bleiben kalt. Lautere Strömungsgeräusche und überhöhter
+            Energieverbrauch sind typische Folgen. Der hydraulische Abgleich nach Verfahren B
+            basiert auf einer raumweisen{" "}
+            <Link href="/leistungen/heizlastberechnung" style={{ color: "var(--color-primary)" }}>
+              Heizlastberechnung
+            </Link>{" "}
+            und erreicht damit die präziseste Einstellung – messbar in bis zu 15 % eingesparten
+            Heizkosten gegenüber dem nicht abgeglichenen Ausgangszustand.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Hydraulischer Abgleich Pflicht 2024 – wann greift das GEG?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Seit der GEG-Novelle 2024 ist der hydraulische Abgleich nach Verfahren B bei jedem
+            Heizungstausch, der über BAFA-Bundesförderung für effiziente Gebäude (BEG EM) gefördert
+            wird, als Pflichtmaßnahme vorgeschrieben. Ohne nachgewiesenen hydraulischen Abgleich
+            wird der Förderantrag abgelehnt. Zusätzlich schreibt die Energieeinsparverordnung für
+            Gebäude mit zentraler Wärmeversorgung und mindestens sechs Wohneinheiten den Abgleich
+            bereits seit 2023 vor. Wer eine Wärmepumpe, einen Pelletkessel oder eine neue
+            Zentralheizung plant, sollte den hydraulischen Abgleich daher von Anfang an einplanen –
+            er ist sowohl Fördervoraussetzung als auch wirtschaftlich sinnvoll.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Verfahren A oder Verfahren B – was ist der Unterschied?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Verfahren A ist eine vereinfachte Methode, die auf pauschalen Näherungswerten basiert
+            und ohne raumweise Heizlastberechnung auskommt. Es liefert eine grobe Annäherung, die
+            für einfache Bestandsanlagen ausreichen kann – ist jedoch für Förderanträge nicht
+            anerkannt. Verfahren B hingegen setzt eine vollständige{" "}
+            <Link href="/leistungen/heizlastberechnung" style={{ color: "var(--color-primary)" }}>
+              Heizlastberechnung nach DIN EN 12831
+            </Link>{" "}
+            voraus und berechnet für jeden Raum den exakten Volumenstrom. Das Ergebnis ist eine
+            deutlich präzisere Einstellung aller Ventile und Pumpenparameter. Nur Verfahren B wird
+            von BAFA und KfW im Rahmen der BEG-Förderung akzeptiert. Die Mehrkosten gegenüber
+            Verfahren A amortisieren sich durch die höhere Energieeffizienz und die Förderung.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Ablauf des Hydraulischen Abgleichs mit Planungsbüro Bless
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
+            Christopher Bless führt den hydraulischen Abgleich in Mönchengladbach und Umgebung als
+            zertifizierter Energieeffizienz-Experte durch. Zunächst werden alle Gebäudedaten
+            erfasst: Grundrisse, Heizkörpergrößen, Dämmstandard und die vorhandene Heizungsanlage.
+            Auf dieser Basis erstellt Planungsbüro Bless die raumweise Heizlastberechnung, aus der
+            die Sollvolumenströme für jeden Heizkörper abgeleitet werden. Die Kosten für den
+            hydraulischen Abgleich nach Verfahren B liegen typischerweise zwischen 300 und 800 €
+            für ein Einfamilienhaus – ein Betrag, der durch die BAFA-Förderung im Rahmen der
+            Heizungsoptimierung teilweise gefördert werden kann.
+          </p>
+
+          <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ flexShrink: 0, width: "44px", height: "44px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FAF7F2", fontWeight: 700, fontSize: "1.1rem" }}>CB</div>
+            <div>
+              <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text)" }}>Christopher Bless</div>
+              <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+                Gebäudeenergieberater (HWK) · Eingetragener Energieeffizienz-Experte (dena) ·{" "}
+                <Link href="/ueber-uns" style={{ color: "var(--color-primary)" }}>Über mich</Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

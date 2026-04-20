@@ -33,7 +33,7 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
@@ -46,13 +46,21 @@ const jsonLd = {
   })),
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://www.planungsbuero-bless.de" },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: "https://www.planungsbuero-bless.de/leistungen" },
+    { "@type": "ListItem", position: 3, name: "Wärmebrücken", item: "https://www.planungsbuero-bless.de/leistungen/waermebruecken" },
+  ],
+};
+
 export default function WaermebrueckenPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav
         style={{
@@ -159,9 +167,10 @@ export default function WaermebrueckenPage() {
               }}
             >
               Wärmebrücken sind oft der entscheidende Faktor, der einen hohen Energieeffizienz-
-              Standard verhindert oder zu Schimmel führt. Mit der numerischen Wärmebrücken-
-              berechnung nach DIN ISO 10211 ermitteln wir präzise Ψ-Werte (Psi-Werte) für jeden
-              kritischen Anschlussdetail – und optimieren die Konstruktion gezielt.
+              Standard verhindert oder zu Schimmel führt. Christopher Bless ermittelt in
+              Mönchengladbach mit der numerischen Wärmebrückenberechnung nach DIN ISO 10211
+              präzise Ψ-Werte für jeden kritischen Anschlussdetail – und optimiert die
+              Konstruktion gezielt.
             </p>
             <div
               style={{
@@ -233,6 +242,92 @@ export default function WaermebrueckenPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Erweiterter Inhalt */}
+      <section style={{ padding: "4rem 2rem", background: "var(--color-background)" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem", marginTop: "0" }}>
+            Was ist eine Wärmebrücke am Gebäude?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Eine Wärmebrücke ist ein Bereich in der Gebäudehülle, an dem die Wärmedämmung
+            unterbrochen oder geschwächt ist und Wärme daher schneller nach außen entweicht als
+            in den angrenzenden Flächen. Typische Wärmebrücken entstehen an Fensterlaibungen,
+            Balkonplatten, Gebäudeecken, Rollladenkästen, Attiken und Deckenrändern. Man
+            unterscheidet lineare Wärmebrücken (z. B. entlang einer Attikakante, beschrieben durch
+            den Ψ-Wert) und punktförmige Wärmebrücken (z. B. Ankerschienen, beschrieben durch den
+            χ-Wert). Wärmebrücken erhöhen den Heizwärmebedarf eines Gebäudes und können – bei
+            unzureichendem Mindestwärmeschutz – zu Kondensation und Schimmelbildung an den
+            Innenoberflächen führen, was sowohl Bauschäden als auch Gesundheitsrisiken für die
+            Bewohner verursacht.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Wärmebrückenberechnung nach DIN ISO 10211 – warum ist sie wichtig?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Die numerische Wärmebrückenberechnung nach DIN ISO 10211 simuliert den
+            zweidimensionalen (und bei Bedarf dreidimensionalen) stationären Wärmedurchgang durch
+            kritische Anschlussdetails mittels Finite-Elemente-Methode. Das Ergebnis ist der
+            Ψ-Wert (Psi-Wert, längenbezogener Wärmedurchgangskoeffizient in W/(m·K)), der den
+            zusätzlichen Wärmeverlust durch die Wärmebrücke pro Meter Länge quantifiziert. Mit
+            diesen exakten Ψ-Werten kann Planungsbüro Bless in Mönchengladbach den
+            Wärmeverlust durch Wärmebrücken präzise in die{" "}
+            <Link href="/leistungen/heizlastberechnung" style={{ color: "var(--color-primary)" }}>
+              Heizlastberechnung
+            </Link>{" "}
+            und den{" "}
+            <Link href="/leistungen/waermeschutznachweis" style={{ color: "var(--color-primary)" }}>
+              Wärmeschutznachweis
+            </Link>{" "}
+            einrechnen – statt pauschaler Zuschlagswerte, die oft zu einer Verschlechterung der
+            Energiebilanz um 10–15 % führen.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Schimmelschutz durch den fRsi-Nachweis
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Neben dem Ψ-Wert liefert die Wärmebrückenberechnung nach DIN ISO 10211 den
+            Temperaturfaktor fRsi an der kritischsten Stelle der Konstruktion. Dieser Wert gibt
+            an, wie nahe die Innenoberflächentemperatur an die Raumlufttemperatur herankommt: Ein
+            fRsi von mindestens 0,70 ist die Mindestanforderung nach GEG, um Schimmelbildung unter
+            normalen Nutzungsbedingungen (20 °C Raumtemperatur, 50 % relative Luftfeuchte)
+            auszuschließen. Christopher Bless dokumentiert den fRsi-Nachweis für jeden
+            analysierten Anschlussdetail und gibt konkrete Optimierungsempfehlungen, wenn die
+            Mindestanforderung nicht erfüllt wird – bevor die Konstruktion ausgeführt wird und
+            teure Nachbesserungen notwendig werden.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Wärmebrückenberechnung für Förderanträge und Energieausweis
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
+            Für die KfW-Effizienzhaus-Förderung auf dem anspruchsvollen EH-40-Standard ist der
+            Nachweis detaillierter Ψ-Werte für alle wesentlichen Wärmebrücken obligatorisch – der
+            pauschale Wärmebrückenzuschlag nach DIN 4108 Beiblatt 2 reicht für diesen Standard
+            nicht aus. Nur mit nachgewiesenen, berechneten Ψ-Werten lässt sich der
+            Transmissionswärmeverlust (H'T) so weit reduzieren, dass das EH-40-Niveau erreicht
+            wird. Planungsbüro Bless pflegt die ermittelten Ψ-Werte direkt in den
+            Energieausweis und den Wärmeschutznachweis ein, sodass alle Dokumente konsistent
+            sind und bei BAFA und KfW anerkannt werden. Die Bearbeitungszeit beträgt je nach
+            Anzahl der Details 5–10 Werktage.
+          </p>
+
+          <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ flexShrink: 0, width: "44px", height: "44px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FAF7F2", fontWeight: 700, fontSize: "1.1rem" }}>CB</div>
+            <div>
+              <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text)" }}>Christopher Bless</div>
+              <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+                Gebäudeenergieberater (HWK) · Eingetragener Energieeffizienz-Experte (dena) ·{" "}
+                <Link href="/ueber-uns" style={{ color: "var(--color-primary)" }}>Über mich</Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

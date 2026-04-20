@@ -2,92 +2,79 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.planungsbuero-bless.de";
-  const now = new Date();
 
   return [
     {
       url: base,
-      lastModified: now,
+      lastModified: new Date("2026-04-20"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: `${base}/leistungen`,
-      lastModified: now,
+      lastModified: new Date("2026-04-20"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${base}/leistungen/heizlastberechnung`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${base}/leistungen/hydraulischer-abgleich`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${base}/leistungen/sanierungsfahrplan`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${base}/leistungen/einzelmassnahmen`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${base}/leistungen/effizienzhaus`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${base}/leistungen/waermeschutznachweis`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${base}/leistungen/lebenszyklusanalyse`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${base}/leistungen/waermebruecken`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${base}/ueber-uns`,
-      lastModified: now,
+      lastModified: new Date("2026-04-20"),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${base}/kontakt`,
-      lastModified: now,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.8,
-    },
-    {
-      url: `${base}/impressum`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${base}/datenschutz`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
     },
   ];
 }

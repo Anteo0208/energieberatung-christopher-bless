@@ -33,7 +33,7 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
@@ -46,13 +46,21 @@ const jsonLd = {
   })),
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://www.planungsbuero-bless.de" },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: "https://www.planungsbuero-bless.de/leistungen" },
+    { "@type": "ListItem", position: 3, name: "Sanierungsfahrplan", item: "https://www.planungsbuero-bless.de/leistungen/sanierungsfahrplan" },
+  ],
+};
+
 export default function SanierungsfahrplanPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav
         style={{
@@ -159,9 +167,10 @@ export default function SanierungsfahrplanPage() {
               }}
             >
               Der individuelle Sanierungsfahrplan (iSFP) ist Ihr maßgeschneiderter Leitfaden für
-              die schrittweise energetische Sanierung Ihres Gebäudes. Er zeigt Ihnen, welche
-              Maßnahmen in welcher Reihenfolge den größten Nutzen bringen – und welche Förderungen
-              Ihnen zustehen.
+              die schrittweise energetische Sanierung Ihres Gebäudes. Christopher Bless erstellt
+              den iSFP in Mönchengladbach als eingetragener Energieeffizienz-Experte – er zeigt
+              Ihnen, welche Maßnahmen in welcher Reihenfolge den größten Nutzen bringen und welche
+              Förderungen Ihnen zustehen.
             </p>
             <div
               style={{
@@ -233,6 +242,87 @@ export default function SanierungsfahrplanPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Erweiterter Inhalt */}
+      <section style={{ padding: "4rem 2rem", background: "var(--color-background)" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem", marginTop: "0" }}>
+            Was ist ein Individueller Sanierungsfahrplan (iSFP)?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Der individuelle Sanierungsfahrplan (iSFP) ist ein staatlich gefördertes Beratungsdokument,
+            das die energetischen Schwachstellen Ihres Gebäudes analysiert und einen maßgeschneiderten
+            Sanierungsfahrplan für die nächsten 10–15 Jahre entwickelt. Anders als eine einfache
+            Energieberatung zeigt der iSFP nicht nur einzelne Maßnahmen, sondern ordnet diese in
+            sinnvolle Umsetzungsstufen ein – so dass jede Maßnahme auf die folgende aufbaut und das
+            Gebäude schrittweise in Richtung Effizienzhaus entwickelt wird. Der iSFP deckt alle
+            Gebäudetypen ab: Einfamilienhäuser, Reihenhäuser, Mehrfamilienhäuser und
+            Nichtwohngebäude. Er ist die Grundlage für den wertvollen{" "}
+            <Link href="/leistungen/einzelmassnahmen" style={{ color: "var(--color-primary)" }}>
+              iSFP-Bonus bei Einzelmaßnahmen
+            </Link>.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Welche Förderung gibt es für den iSFP?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Die BAFA (Bundesamt für Wirtschaft und Ausfuhrkontrolle) bezuschusst die Erstellung
+            eines iSFP mit bis zu 80 % der anerkannten Beratungskosten. Für ein Einfamilienhaus
+            bedeutet das: Bei Gesamtkosten von 1.000 € übernimmt die BAFA bis zu 800 €, sodass
+            für den Eigentümer nur 200 € Eigenanteil verbleiben. Der iSFP ist damit in vielen
+            Fällen nahezu kostenneutral. Die Beantragung der Förderung erfolgt durch den
+            Energieberater – Christopher Bless übernimmt die gesamte Antragstellung für Sie.
+            Förderfähig sind Beratungskosten zwischen 400 und 1.000 € netto, je nach Gebäudegröße
+            und Aufwand.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            iSFP-Bonus: 5 % mehr Förderung bei stufenweiser Sanierung
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Der größte finanzielle Vorteil des iSFP liegt im sogenannten iSFP-Bonus: Wer
+            Sanierungsmaßnahmen in der im iSFP festgelegten Reihenfolge umsetzt, erhält auf jede
+            einzelne Maßnahme 5 % zusätzliche Förderung aus der BEG-Einzelmaßnahmenförderung
+            (BAFA). Statt 15 % Grundförderung gibt es dann 20 % – und bei Heizungsmaßnahmen
+            können sich daraus durch Kombinationsboni noch höhere Gesamtquoten ergeben. Der Bonus
+            gilt für alle im{" "}
+            <Link href="/leistungen/einzelmassnahmen" style={{ color: "var(--color-primary)" }}>
+              BEG EM förderfähigen Maßnahmen
+            </Link>{" "}
+            und läuft so lange, wie der iSFP gültig und der Förderrahmen aktiv ist.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            So erstellen wir Ihren iSFP in Mönchengladbach
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
+            Planungsbüro Bless erstellt den iSFP in Mönchengladbach und der gesamten Region
+            Niederrhein nach dem standardisierten Verfahren des Bundesministeriums für Wirtschaft
+            und Klimaschutz. Zunächst findet eine Vor-Ort-Begehung statt, bei der alle relevanten
+            Bauteile aufgenommen werden. Anschließend erfolgt die energetische Bilanzierung und
+            die Entwicklung eines individuellen Maßnahmenpakets mit Wirtschaftlichkeitsberechnung.
+            Das Ergebnis ist ein 20–30-seitiges Dokument mit konkreten Empfehlungen, Kostenschätzungen
+            und einer Übersicht aller erreichbaren{" "}
+            <Link href="/leistungen/effizienzhaus" style={{ color: "var(--color-primary)" }}>
+              Effizienzhaus-Standards
+            </Link>.
+          </p>
+
+          <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ flexShrink: 0, width: "44px", height: "44px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FAF7F2", fontWeight: 700, fontSize: "1.1rem" }}>CB</div>
+            <div>
+              <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text)" }}>Christopher Bless</div>
+              <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+                Gebäudeenergieberater (HWK) · Eingetragener Energieeffizienz-Experte (dena) ·{" "}
+                <Link href="/ueber-uns" style={{ color: "var(--color-primary)" }}>Über mich</Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

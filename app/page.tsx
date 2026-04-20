@@ -15,7 +15,7 @@ const services = [
     title: "Heizlastberechnung",
     subtitle: "nach DIN TS 12831",
     description: "Präzise Ermittlung des Wärmebedarfs Ihres Gebäudes als Grundlage für die optimale Heizungsauslegung.",
-    href: "/leistungen#heizlast",
+    href: "/leistungen/heizlastberechnung",
   },
   {
     icon: (
@@ -28,7 +28,7 @@ const services = [
     title: "Hydraulischer Abgleich",
     subtitle: "Verfahren B",
     description: "Gleichmäßige Wärmeverteilung im gesamten Heizsystem – senkt Energieverbrauch und erhöht Komfort.",
-    href: "/leistungen#hydraulik",
+    href: "/leistungen/hydraulischer-abgleich",
   },
   {
     icon: (
@@ -40,7 +40,7 @@ const services = [
     title: "Sanierungsfahrplan",
     subtitle: "individuell & förderfähig",
     description: "Ihr persönlicher Stufenplan zur energetischen Sanierung – mit konkreten Maßnahmen und Förderoptionen.",
-    href: "/leistungen#fahrplan",
+    href: "/leistungen/sanierungsfahrplan",
   },
   {
     icon: (
@@ -52,7 +52,7 @@ const services = [
     title: "Einzelmaßnahmen",
     subtitle: "Begleitung & Antragstellung",
     description: "Professionelle Begleitung bei der Umsetzung einzelner energetischer Maßnahmen – von der Planung bis zum Abschluss.",
-    href: "/leistungen#einzelmassnahmen",
+    href: "/leistungen/einzelmassnahmen",
   },
   {
     icon: (
@@ -64,7 +64,7 @@ const services = [
     title: "Effizienzhaus",
     subtitle: "Sanierung & Neubau",
     description: "Ganzheitliche Begleitung bei der Effizienzhaussanierung und Effizienzhaus-Neubauplanung bis zur Fertigstellung.",
-    href: "/leistungen#effizienzhaus",
+    href: "/leistungen/effizienzhaus",
   },
   {
     icon: (
@@ -76,7 +76,7 @@ const services = [
     title: "Wärmeschutznachweis",
     subtitle: "Gebäudeklassen 1 & 2",
     description: "Erstellung des baulichen Wärmeschutznachweises für Wohn- und Nichtwohngebäude der Gebäudeklassen 1 und 2.",
-    href: "/leistungen#waermeschutz",
+    href: "/leistungen/waermeschutznachweis",
   },
   {
     icon: (
@@ -89,7 +89,7 @@ const services = [
     title: "Lebenszyklusanalyse (LCA)",
     subtitle: "DIN EN ISO 14040",
     description: "Ökologische Bewertung des Gebäudes über den gesamten Lebenszyklus – Pflichtnachweis für QNG-Siegel und KfW-Klimabonus.",
-    href: "/leistungen#lca",
+    href: "/leistungen/lebenszyklusanalyse",
   },
   {
     icon: (
@@ -102,14 +102,14 @@ const services = [
     title: "Wärmebrückenberechnung",
     subtitle: "DIN ISO 10211",
     description: "Präzise 2D/3D-Berechnung von Wärmebrücken für optimale Dämmung, Schimmelschutz und besseren Energieausweis.",
-    href: "/leistungen#waermebruecken",
+    href: "/leistungen/waermebruecken",
   },
 ];
 
 const stats = [
-  { value: "10", label: "Jahre Erfahrung" },
+  { value: "15+", label: "Jahre Erfahrung" },
   { value: "100+", label: "Projekte abgeschlossen" },
-  { value: "100%", label: "zertifiziert nach BAFA" },
+  { value: "BAFA", label: "anerkannter Sachverständiger" },
 ];
 
 function useInView(threshold = 0.15) {

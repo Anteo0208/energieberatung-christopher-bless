@@ -33,7 +33,7 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
@@ -46,13 +46,21 @@ const jsonLd = {
   })),
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://www.planungsbuero-bless.de" },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: "https://www.planungsbuero-bless.de/leistungen" },
+    { "@type": "ListItem", position: 3, name: "Einzelmaßnahmen", item: "https://www.planungsbuero-bless.de/leistungen/einzelmassnahmen" },
+  ],
+};
+
 export default function EinzelmassnahmenPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav
         style={{
@@ -159,8 +167,9 @@ export default function EinzelmassnahmenPage() {
               }}
             >
               Einzelmaßnahmen nach dem Bundesförderungsprogramm für effiziente Gebäude (BEG EM)
-              bieten attraktive Zuschüsse für gezielte Sanierungsschritte. Wir begleiten Sie durch
-              den gesamten Prozess – von der Antragstellung bis zur Verwendungsnachweis-Erstellung.
+              bieten attraktive Zuschüsse für gezielte Sanierungsschritte. In Mönchengladbach
+              begleitet Christopher Bless Eigentümer durch den gesamten Prozess – von der
+              Antragstellung bis zur Verwendungsnachweis-Erstellung.
             </p>
             <div
               style={{
@@ -232,6 +241,84 @@ export default function EinzelmassnahmenPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Erweiterter Inhalt */}
+      <section style={{ padding: "4rem 2rem", background: "var(--color-background)" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem", marginTop: "0" }}>
+            Was sind BAFA Einzelmaßnahmen (BEG EM)?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Die Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM) ist das zentrale
+            Förderprogramm der BAFA für gezielte Sanierungsmaßnahmen an bestehenden Wohn- und
+            Nichtwohngebäuden. Anders als die KfW-Effizienzhaus-Förderung, die ein Gesamtpaket
+            voraussetzt, können beim BEG EM einzelne Maßnahmen wie Dämmung, Fenster, Heizung oder
+            Lüftung separat gefördert werden. Voraussetzung ist die Einbindung eines eingetragenen
+            Energieeffizienz-Experten, der den Antrag stellt und die technischen Nachweise erbringt.
+            Wichtig: Der Antrag muss zwingend vor der Beauftragung des ausführenden Handwerksbetriebs
+            gestellt werden – ein nachträglicher Antrag wird von der BAFA nicht akzeptiert.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Welche Maßnahmen werden gefördert?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Das BEG EM fördert ein breites Spektrum an Sanierungsmaßnahmen: Gebäudehüllenmaßnahmen
+            wie Dach-, Fassaden- und Kellerdeckendämmung sowie Fenstererneuerung, Anlagentechnik
+            wie der Austausch von Heizkesseln gegen Wärmepumpen, Pelletheizungen oder
+            Fernwärmeanschlüsse, Lüftungsanlagen mit Wärmerückgewinnung sowie die
+            Heizungsoptimierung durch{" "}
+            <Link href="/leistungen/hydraulischer-abgleich" style={{ color: "var(--color-primary)" }}>
+              hydraulischen Abgleich
+            </Link>.
+            Auch Planungs- und Begleitkosten durch Energieeffizienz-Experten sind förderfähig.
+            Nicht gefördert werden reine Instandhaltungsmaßnahmen ohne energetischen Mehrwert.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Wie hoch ist die BAFA-Förderung 2024?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Der Grundfördersatz im BEG EM beträgt 15 % der förderfähigen Nettoinvestitionskosten.
+            Mit einem gültigen{" "}
+            <Link href="/leistungen/sanierungsfahrplan" style={{ color: "var(--color-primary)" }}>
+              Individuellen Sanierungsfahrplan (iSFP)
+            </Link>{" "}
+            erhöht sich die Förderung um 5 % auf insgesamt 20 % (iSFP-Bonus). Bei
+            Heizungsmaßnahmen können durch den Heizungstausch-Bonus, den Einkommensbonus und den
+            Klimageschwindigkeits-Bonus zusätzliche Prozentpunkte hinzukommen. Die maximale
+            förderfähige Investitionssumme liegt bei 60.000 € pro Wohneinheit für Gebäudehülle und
+            Anlagentechnik. Der Zuschuss wird direkt nach Einreichung des Verwendungsnachweises
+            auf das Konto des Antragstellers überwiesen.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Ablauf der Förderbegleitung durch Planungsbüro Bless
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
+            Christopher Bless übernimmt in Mönchengladbach die vollständige Förderbegleitung für
+            BEG-Einzelmaßnahmen: Zunächst wird die geplante Maßnahme technisch bewertet und auf
+            Förderfähigkeit geprüft. Danach stellt Planungsbüro Bless den Antrag im BAFA-Portal
+            – bevor Sie einen Handwerker beauftragen. Nach Abschluss der Baumaßnahme erstellen wir
+            alle erforderlichen technischen Bestätigungen (Fachunternehmerbestätigung,
+            Energieberaterbestätigung) und reichen den Verwendungsnachweis ein. Die Auszahlung des
+            Zuschusses erfolgt typischerweise innerhalb von 6–8 Wochen nach Nachweis.
+          </p>
+
+          <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ flexShrink: 0, width: "44px", height: "44px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FAF7F2", fontWeight: 700, fontSize: "1.1rem" }}>CB</div>
+            <div>
+              <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text)" }}>Christopher Bless</div>
+              <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+                Gebäudeenergieberater (HWK) · Eingetragener Energieeffizienz-Experte (dena) ·{" "}
+                <Link href="/ueber-uns" style={{ color: "var(--color-primary)" }}>Über mich</Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

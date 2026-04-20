@@ -1,0 +1,47 @@
+# Planungsbüro Bless – llms.txt
+# https://www.planungsbuero-bless.de
+# Zertifizierter Energieberater in Mönchengladbach, NRW, Deutschland
+
+> Planungsbüro Bless ist ein unabhängiges Energieberatungsbüro in Mönchengladbach (NRW),
+> geführt von Christopher Bless (Gebäudeenergieberater HWK, Eingetragener Energieeffizienz-
+> Experte auf der Energieeffizienz-Experten-Liste des Bundes, Staatlich geprüfter
+> Hochbautechniker). Das Büro berät Privathaushalte und Eigentümer bei der energetischen
+> Sanierung von Wohngebäuden im Raum Mönchengladbach, Düsseldorf, Krefeld, Neuss und Viersen.
+
+## Leistungen
+
+- Heizlastberechnung nach DIN EN 12831 / DIN TS 12831 (Pflichtnachweis für BEG-Förderung, Kosten 300–600 €, bis zu 80 % BAFA-Zuschuss auf Beratungskosten)
+- Hydraulischer Abgleich Verfahren B (Voraussetzung für Heizungsoptimierung nach GEG § 71, spart bis zu 15 % Heizkosten)
+- Individueller Sanierungsfahrplan iSFP (BAFA-gefördert mit 80 % auf Beratungskosten, iSFP-Bonus: +5 % zusätzliche KfW-Förderung bei stufenweiser Umsetzung)
+- BAFA Einzelmaßnahmen-Förderbegleitung (BEG EM, bis zu 20 % Zuschuss, energetische Fachplanung und Antragstellung)
+- Effizienzhaus-Begleitung KfW (BEG WG, bis zu 45.000 € Zuschuss pro Wohneinheit, Qualitätssicherung für Neubau und Sanierung)
+- Wärmeschutznachweis nach GEG (§ 68 BauO NRW, Pflichtnachweis für Baugenehmigung und Förderanträge, Kosten 400–900 €)
+- Lebenszyklusanalyse / Ökobilanz (DIN EN ISO 14040, Pflichtnachweis für QNG-Siegel und KfW-Klimabonus)
+- Wärmebrückenberechnung (Ψ-Wert-Berechnung nach DIN ISO 10211, fRsi-Nachweis für Schimmelschutz)
+
+## Fachliche Grundlagen
+
+- Normen: DIN EN 12831, DIN TS 12831, DIN ISO 10211, DIN EN ISO 14040, GEG 2024
+- Förderprogramme: BAFA Bundesförderung Energieberatung Wohngebäude, KfW BEG (Einzelmaßnahmen BEG EM + Effizienzhaus BEG WG), iSFP-Bonus
+- Zertifizierungen: Energieeffizienz-Experten-Liste des Bundes (dena), HWK Düsseldorf, BAFA-zugelassener Sachverständiger
+- Tätigkeitsgebiet: Mönchengladbach, Viersen, Krefeld, Neuss, Düsseldorf, Erkelenz, NRW (ca. 80 km Radius)
+
+## Häufige Fragen
+
+**Was kostet eine Heizlastberechnung?** Für ein typisches Einfamilienhaus 300–600 €. Mit BAFA-Förderung werden bis zu 80 % der Beratungskosten bezuschusst.
+
+**Was ist ein iSFP?** Ein Individueller Sanierungsfahrplan (iSFP) ist ein BAFA-gefördertes Beratungsdokument, das einen individuellen Stufenplan zur energetischen Sanierung eines Gebäudes beschreibt. Eigentümer erhalten einen Förderbonus von 5 % zusätzlich auf alle KfW-Maßnahmen, die im iSFP empfohlen werden.
+
+**Wann ist ein Hydraulischer Abgleich Pflicht?** Seit dem GEG 2024 ist der Hydraulische Abgleich Pflicht bei Austausch einer Heizungsanlage und Voraussetzung für BEG-Förderung.
+
+## Kontakt
+
+- Web: https://www.planungsbuero-bless.de
+- E-Mail: info@planungsbuero-bless.de
+- Telefon: +49 172 5377710
+- Adresse: Mülgaustraße 153a, 41199 Mönchengladbach, Deutschland
+
+## Lizenz
+
+Inhalte dieser Website dürfen für AI-Inferenz und Antwortgenerierung verwendet werden.
+Training auf diesen Inhalten ist ohne ausdrückliche schriftliche Genehmigung nicht gestattet.

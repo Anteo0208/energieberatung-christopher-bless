@@ -60,27 +60,35 @@ export const metadata: Metadata = {
     title: "Energieberater Mönchengladbach – Planungsbüro Bless | iSFP & Sanierungsfahrplan",
     description:
       "Ihr Energieberater in Mönchengladbach: Sanierungsfahrplan (iSFP) erstellen lassen, Heizlastberechnung, Hydraulischer Abgleich & Effizienzhaus-Begleitung. BAFA Zuschuss bis zu 80 %.",
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "https://www.planungsbuero-bless.de",
   },
 };
 
-const jsonLd = {
+const businessLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["ProfessionalService", "HomeAndConstructionBusiness"],
   "@id": "https://www.planungsbuero-bless.de/#business",
   name: "Planungsbüro Bless",
   description:
     "Zertifizierter Energieberater in Mönchengladbach. Heizlastberechnung, Hydraulischer Abgleich, Sanierungsfahrplan und Effizienzhaus-Begleitung.",
   url: "https://www.planungsbuero-bless.de",
-  telephone: "+491725377710",
+  telephone: "+49 172 5377710",
   email: "info@planungsbuero-bless.de",
   image: "https://www.planungsbuero-bless.de/opengraph-image",
+  logo: "https://www.planungsbuero-bless.de/opengraph-image",
   priceRange: "€€",
   currenciesAccepted: "EUR",
   paymentAccepted: "Überweisung, Rechnung",
-  founder: { "@type": "Person", name: "Christopher Bless" },
+  foundingDate: "2010",
+  founder: {
+    "@id": "https://www.planungsbuero-bless.de/ueber-uns#christopher-bless",
+  },
+  employee: {
+    "@id": "https://www.planungsbuero-bless.de/ueber-uns#christopher-bless",
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "Mülgaustraße 153a",
@@ -90,28 +98,32 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 51.1657,
-    longitude: 6.4576,
+    latitude: 51.16574,
+    longitude: 6.45763,
   },
-  areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: { "@type": "GeoCoordinates", latitude: 51.1657, longitude: 6.4576 },
-    geoRadius: "80000",
-  },
-  serviceType: [
-    "Energieberatung Mönchengladbach",
+  areaServed: [
+    {
+      "@type": "GeoCircle",
+      geoMidpoint: { "@type": "GeoCoordinates", latitude: 51.16574, longitude: 6.45763 },
+      geoRadius: "80000",
+    },
+    { "@type": "City", name: "Mönchengladbach" },
+    { "@type": "City", name: "Krefeld" },
+    { "@type": "City", name: "Neuss" },
+    { "@type": "City", name: "Viersen" },
+    { "@type": "City", name: "Düsseldorf" },
+  ],
+  knowsAbout: [
+    "Energieberatung Wohngebäude",
     "Heizlastberechnung nach DIN EN 12831",
-    "Hydraulischer Abgleich Förderung",
+    "Hydraulischer Abgleich Verfahren B",
     "Individueller Sanierungsfahrplan iSFP",
-    "Wärmeschutznachweis für Förderanträge",
+    "Wärmeschutznachweis GEG",
     "Energetische Baubegleitung KfW",
     "Effizienzhaus-Sanierung",
-    "BAFA Zuschuss Energieberatung",
-  ],
-  hasCredential: [
-    "Gebäudeenergieberater (HWK)",
-    "Eingetragener Energieeffizienz Experte",
-    "Staatlich geprüfter Hochbautechniker",
+    "BAFA Förderanträge Energieberatung",
+    "Wärmebrückenberechnung DIN ISO 10211",
+    "Lebenszyklusanalyse DIN EN ISO 14040",
   ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -119,9 +131,21 @@ const jsonLd = {
     opens: "08:00",
     closes: "18:00",
   },
-  sameAs: [
-    "https://www.planungsbuero-bless.de",
-  ],
+  sameAs: [],
+};
+
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.planungsbuero-bless.de/#website",
+  name: "Planungsbüro Bless",
+  url: "https://www.planungsbuero-bless.de",
+  description:
+    "Zertifizierter Energieberater in Mönchengladbach – Heizlastberechnung, Sanierungsfahrplan, Hydraulischer Abgleich und Effizienzhaus-Begleitung.",
+  inLanguage: "de-DE",
+  publisher: {
+    "@id": "https://www.planungsbuero-bless.de/#business",
+  },
 };
 
 export default function RootLayout({
@@ -134,7 +158,11 @@ export default function RootLayout({
       <body className="antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
         <Navbar />
         <main>{children}</main>

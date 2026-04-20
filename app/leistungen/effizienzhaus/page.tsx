@@ -33,7 +33,7 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
@@ -46,13 +46,21 @@ const jsonLd = {
   })),
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://www.planungsbuero-bless.de" },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: "https://www.planungsbuero-bless.de/leistungen" },
+    { "@type": "ListItem", position: 3, name: "Effizienzhaus", item: "https://www.planungsbuero-bless.de/leistungen/effizienzhaus" },
+  ],
+};
+
 export default function EffizienzhausPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav
         style={{
@@ -159,9 +167,9 @@ export default function EffizienzhausPage() {
               }}
             >
               Die Sanierung oder der Neubau auf Effizienzhaus-Niveau ist die umfangreichste Form
-              der energetischen Gebäudeoptimierung. Mit der richtigen Planung und einem zugelassenen
-              Energieeffizienz-Experten an Ihrer Seite maximieren Sie Ihre KfW-Förderung und
-              erzielen dauerhaft niedrige Energiekosten.
+              der energetischen Gebäudeoptimierung. Christopher Bless begleitet Bauherren und
+              Eigentümer in Mönchengladbach als zugelassener Energieeffizienz-Experte – von der
+              Planung bis zur Abschlussdokumentation für maximale KfW-Förderung.
             </p>
             <div
               style={{
@@ -233,6 +241,88 @@ export default function EffizienzhausPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Erweiterter Inhalt */}
+      <section style={{ padding: "4rem 2rem", background: "var(--color-background)" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem", marginTop: "0" }}>
+            Was ist ein KfW Effizienzhaus?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Ein KfW-Effizienzhaus ist ein Gebäude, das definierte energetische Standards hinsichtlich
+            Primärenergiebedarf und Transmissionswärmeverlust erreicht. Die Ziffer im Namen (z. B.
+            EH 40, EH 55, EH 85) gibt an, wie viel Prozent des Primärenergiebedarfs ein
+            Referenzgebäude nach GEG verbraucht: Ein Effizienzhaus 40 verbraucht also nur 40 %
+            der Energie des Referenzgebäudes. Die KfW fördert sowohl Sanierungen bestehender
+            Gebäude als auch klimafreundliche Neubauten, die den jeweiligen Standard nachweislich
+            erreichen. Für alle Förderanträge ist die Einbindung eines zugelassenen
+            Energieeffizienz-Experten als Sachverständiger verpflichtend.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Effizienzhaus-Standard: EH 40, EH 55, EH 85 – welcher ist richtig?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Der Effizienzhaus-Standard 40 ist der ambitionierteste und am höchsten geförderte
+            Standard – er ist Pflichtvoraussetzung für den KfW-Klimabonus und maximiert die
+            Fördersumme pro Wohneinheit. Effizienzhaus 55 ist der am häufigsten angestrebte
+            Sanierungsstandard, da er für die meisten Bestandsgebäude wirtschaftlich erreichbar ist
+            und bereits hohe Förderungen auslöst. Effizienzhaus 85 ist ein Einstiegsstandard, der
+            für Gebäude mit schlechtem Ausgangszustand als erste Stufe sinnvoll sein kann. Welcher
+            Standard für Ihr Gebäude sinnvoll und wirtschaftlich ist, ermittelt Christopher Bless
+            in einer Vorabanalyse – als Grundlage für einen möglichen{" "}
+            <Link href="/leistungen/sanierungsfahrplan" style={{ color: "var(--color-primary)" }}>
+              Sanierungsfahrplan (iSFP)
+            </Link>.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Wie hoch ist die KfW-Förderung 2024 für Effizienzhaus-Sanierung?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Im Rahmen des BEG Wohngebäude (BEG WG) fördert die KfW die Sanierung auf
+            Effizienzhaus-Niveau mit Zuschüssen von bis zu 45.000 € pro Wohneinheit bei EH 40
+            Klimafreundlich Plus. Die Förderquote beträgt je nach Standard zwischen 15 % und 45 %
+            der förderfähigen Kosten (maximal 150.000 € pro Wohneinheit). Zusätzlich kann ein
+            Klimabonus von weiteren 5.000 € gewährt werden, wenn eine{" "}
+            <Link href="/leistungen/lebenszyklusanalyse" style={{ color: "var(--color-primary)" }}>
+              Lebenszyklusanalyse (LCA)
+            </Link>{" "}
+            nachweist, dass das Gebäude besonders geringe Treibhausgasemissionen aufweist. Der
+            Antrag muss vor Baubeginn gestellt werden.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Energetische Baubegleitung – was macht der Sachverständige?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
+            Als Energetischer Sachverständiger (auch: Energieeffizienz-Experte für Bundesförderung)
+            übernimmt Christopher Bless in Mönchengladbach die gesamte KfW-Pflichtbegleitung: die
+            Bestätigung zum Antrag (BzA) vor Baubeginn, regelmäßige Baubesuche zur
+            Qualitätssicherung kritischer Details wie{" "}
+            <Link href="/leistungen/waermeschutznachweis" style={{ color: "var(--color-primary)" }}>
+              Wärmeschutz
+            </Link>{" "}
+            und Luftdichtheit sowie die Bestätigung nach Durchführung (BnD) zum Abschluss der
+            Maßnahmen. Ohne diese Bestätigungen wird die KfW-Förderung nicht ausgezahlt. Die
+            energetische Baubegleitung ist ihrerseits durch die BAFA mit bis zu 50 % der Kosten
+            förderfähig.
+          </p>
+
+          <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ flexShrink: 0, width: "44px", height: "44px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FAF7F2", fontWeight: 700, fontSize: "1.1rem" }}>CB</div>
+            <div>
+              <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text)" }}>Christopher Bless</div>
+              <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+                Gebäudeenergieberater (HWK) · Eingetragener Energieeffizienz-Experte (dena) ·{" "}
+                <Link href="/ueber-uns" style={{ color: "var(--color-primary)" }}>Über mich</Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

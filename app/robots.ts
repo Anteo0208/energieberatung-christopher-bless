@@ -2,17 +2,29 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: [
-        "/api/",
-        "/admin/",
-        "/portal/",
-        "/login/",
-        "/Erfassungsbogen/",
-      ],
-    },
+    rules: [
+      {
+        userAgent: [
+          "*",
+          "GPTBot",
+          "OAI-SearchBot",
+          "ClaudeBot",
+          "PerplexityBot",
+          "Google-Extended",
+          "Amazonbot",
+          "anthropic-ai",
+          "Applebot-Extended",
+        ],
+        allow: "/",
+        disallow: [
+          "/api/",
+          "/admin/",
+          "/portal/",
+          "/login/",
+          "/Erfassungsbogen/",
+        ],
+      },
+    ],
     sitemap: "https://www.planungsbuero-bless.de/sitemap.xml",
   };
 }

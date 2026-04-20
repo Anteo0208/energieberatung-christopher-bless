@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Über uns – Energieeffizienz-Experte Mönchengladbach",
   description:
-    "Planungsbüro Bless – Ihr Energieeffizienz-Experte in Mönchengladbach. Gebäudeenergieberater (HWK), eingetragener Energieberater für BAFA & KfW Förderprogramme, staatlich geprüfter Hochbautechniker. 10 Jahre Erfahrung.",
+    "Christopher Bless – Ihr Energieeffizienz-Experte in Mönchengladbach. Gebäudeenergieberater (HWK), eingetragener Energieberater für BAFA & KfW Förderprogramme, staatlich geprüfter Hochbautechniker. Über 15 Jahre Erfahrung.",
   keywords: [
     "Energieberater Mönchengladbach",
     "Energieeffizienz-Experte Mönchengladbach",
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Über uns – Energieeffizienz-Experte Mönchengladbach | Planungsbüro Bless",
     description:
-      "Ihr Energieeffizienz-Experte in Mönchengladbach mit 10 Jahren Erfahrung. Gebäudeenergieberater (HWK), eingetragener Experte für BAFA & KfW Förderprogramme.",
+      "Christopher Bless – Energieeffizienz-Experte in Mönchengladbach mit über 15 Jahren Erfahrung. Gebäudeenergieberater (HWK), eingetragener Experte für BAFA & KfW Förderprogramme.",
     url: "https://www.planungsbuero-bless.de/ueber-uns",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Christopher Bless – Energieberater Mönchengladbach",

@@ -75,18 +75,18 @@ export default function Footer() {
           </div>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             {[
-              { label: "Heizlastberechnung", id: "heizlast" },
-              { label: "Hydraulischer Abgleich", id: "hydraulik" },
-              { label: "Sanierungsfahrplan", id: "fahrplan" },
-              { label: "Einzelmaßnahmen", id: "einzelmassnahmen" },
-              { label: "Effizienzhaus", id: "effizienzhaus" },
-              { label: "Wärmeschutznachweis", id: "waermeschutz" },
-              { label: "Lebenszyklusanalyse (LCA)", id: "lca" },
-              { label: "Wärmebrückenberechnung", id: "waermebruecken" },
+              { label: "Heizlastberechnung", slug: "heizlastberechnung" },
+              { label: "Hydraulischer Abgleich", slug: "hydraulischer-abgleich" },
+              { label: "Sanierungsfahrplan", slug: "sanierungsfahrplan" },
+              { label: "Einzelmaßnahmen", slug: "einzelmassnahmen" },
+              { label: "Effizienzhaus", slug: "effizienzhaus" },
+              { label: "Wärmeschutznachweis", slug: "waermeschutznachweis" },
+              { label: "Lebenszyklusanalyse (LCA)", slug: "lebenszyklusanalyse" },
+              { label: "Wärmebrückenberechnung", slug: "waermebruecken" },
             ].map((item) => (
-              <li key={item.id}>
+              <li key={item.slug}>
                 <Link
-                  href={`/leistungen#${item.id}`}
+                  href={`/leistungen/${item.slug}`}
                   style={{
                     color: "rgba(250,247,242,0.7)",
                     textDecoration: "none",
@@ -115,8 +115,20 @@ export default function Footer() {
             Kontakt
           </div>
           <div style={{ fontSize: "0.9rem", opacity: 0.8, lineHeight: 2 }}>
-            <div>Planungsbüro Bless</div>
+            <div style={{ fontWeight: 600 }}>Planungsbüro Bless</div>
             <div>Christopher Bless</div>
+            <div style={{ marginTop: "0.5rem", opacity: 0.9 }}>Mülgaustraße 153a</div>
+            <div>41199 Mönchengladbach</div>
+            <div style={{ marginTop: "0.5rem" }}>
+              <a href="tel:+4917253777010" style={{ color: "rgba(250,247,242,0.8)", textDecoration: "none" }}>
+                +49 172 5377710
+              </a>
+            </div>
+            <div>
+              <a href="mailto:info@planungsbuero-bless.de" style={{ color: "rgba(250,247,242,0.8)", textDecoration: "none" }}>
+                info@planungsbuero-bless.de
+              </a>
+            </div>
             <div style={{ marginTop: "0.75rem" }}>
               <Link href="/kontakt" style={{ color: "var(--color-accent, #C8A96E)", textDecoration: "none" }}>
                 Beratung anfragen →

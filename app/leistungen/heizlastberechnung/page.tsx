@@ -33,26 +33,31 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
     "@type": "Question",
     name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
   })),
+};
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://www.planungsbuero-bless.de" },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: "https://www.planungsbuero-bless.de/leistungen" },
+    { "@type": "ListItem", position: 3, name: "Heizlastberechnung", item: "https://www.planungsbuero-bless.de/leistungen/heizlastberechnung" },
+  ],
 };
 
 export default function HeizlastberechnungPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav
         style={{
@@ -158,9 +163,10 @@ export default function HeizlastberechnungPage() {
                 marginBottom: "2rem",
               }}
             >
-              Die Heizlastberechnung nach DIN TS 12831 ist das Fundament einer korrekt ausgelegten
-              Heizungsanlage. Sie ermittelt präzise, wie viel Wärme ein Gebäude unter
-              Normbedingungen maximal benötigt – Raum für Raum.
+              Die Heizlastberechnung nach DIN EN 12831 ist das Fundament einer korrekt ausgelegten
+              Heizungsanlage. Als zertifizierter Energieberater in Mönchengladbach ermittelt
+              Christopher Bless präzise, wie viel Wärme Ihr Gebäude unter Normbedingungen
+              maximal benötigt – Raum für Raum, normgerecht und förderkonform.
             </p>
             <div
               style={{
@@ -232,6 +238,78 @@ export default function HeizlastberechnungPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Erweiterter Inhalt */}
+      <section style={{ padding: "4rem 2rem", background: "var(--color-background)" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem", marginTop: "0" }}>
+            Was ist eine Heizlastberechnung nach DIN EN 12831?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Eine Heizlastberechnung nach DIN EN 12831 ist eine normierte Berechnung, die den maximalen
+            Wärmebedarf eines Gebäudes unter definierten Außentemperaturbedingungen (Normauslegungstemperatur)
+            ermittelt. Sie bildet die Grundlage für die korrekte Dimensionierung von Heizkörpern,
+            Wärmepumpen, Heizkreisverteilern und Pumpen. Ohne eine präzise Heizlastberechnung riskieren
+            Eigentümer eine überdimensionierte Anlage mit erhöhtem Energieverbrauch oder eine
+            unterdimensionierte Anlage, die an kalten Tagen nicht ausreichend heizt. Planungsbüro Bless
+            führt die Berechnung raumweise durch – für jedes Zimmer separat, damit die gesamte Anlage
+            optimal aufeinander abgestimmt ist.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Wann ist eine Heizlastberechnung Pflicht?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Seit der Novellierung des Gebäudeenergiegesetzes (GEG 2024) ist die Heizlastberechnung
+            nach DIN EN 12831 bei Beantragung von Bundesförderung für effiziente Gebäude (BEG) beim
+            BAFA oder der KfW verpflichtend. Wer eine neue Wärmepumpe, einen Heizkessel oder eine
+            Fernwärmeanbindung förderfähig installieren möchte, muss den Nachweis durch einen
+            eingetragenen Energieeffizienz-Experten erbringen lassen. Auch beim Hydraulischen
+            Abgleich nach Verfahren B ist die Heizlastberechnung Pflichtvoraussetzung. Ohne diesen
+            Nachweis werden Förderanträge abgelehnt.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Heizlastberechnung für Wärmepumpe – worauf kommt es an?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Eine Wärmepumpe arbeitet nur dann effizient, wenn sie exakt auf den tatsächlichen
+            Wärmebedarf des Gebäudes ausgelegt ist. Eine zu große Wärmepumpe taktet häufig (schaltet
+            sich ständig ein und aus), was den Wirkungsgrad drastisch senkt und die Lebensdauer
+            verkürzt. Eine zu kleine Anlage kann den Heizbedarf an kalten Tagen nicht decken.
+            Die Heizlastberechnung liefert die Grundlage für die Auswahl der richtigen Wärmepumpengröße
+            (kW) und den korrekten COP-Betriebspunkt. In Kombination mit dem{" "}
+            <Link href="/leistungen/hydraulischer-abgleich" style={{ color: "var(--color-primary)" }}>
+              Hydraulischen Abgleich
+            </Link>{" "}
+            wird sichergestellt, dass die Wärme gleichmäßig im Gebäude verteilt wird.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            So läuft die Heizlastberechnung bei Planungsbüro Bless ab
+          </h2>
+          <ol style={{ paddingLeft: "1.5rem", color: "var(--color-text-muted)", lineHeight: 2, fontSize: "1rem", marginBottom: "2.5rem" }}>
+            <li><strong style={{ color: "var(--color-text)" }}>Unterlagencheck:</strong> Sie übermitteln uns Grundrisse, Baujahr, Dämmstandard und aktuelle Heizung.</li>
+            <li><strong style={{ color: "var(--color-text)" }}>Raumweise Berechnung:</strong> Wir berechnen den Heizwärmebedarf für jeden Raum nach DIN EN 12831.</li>
+            <li><strong style={{ color: "var(--color-text)" }}>Normgerechte Dokumentation:</strong> Sie erhalten einen vollständigen Nachweis, der bei BAFA und KfW anerkannt wird.</li>
+            <li><strong style={{ color: "var(--color-text)" }}>Übergabe in 3–5 Werktagen:</strong> Nach Eingang aller Unterlagen ist das Ergebnis in der Regel innerhalb einer Woche fertig.</li>
+          </ol>
+
+          {/* Autorenhinweis */}
+          <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ flexShrink: 0, width: "44px", height: "44px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FAF7F2", fontWeight: 700, fontSize: "1.1rem" }}>CB</div>
+            <div>
+              <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text)" }}>Christopher Bless</div>
+              <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+                Gebäudeenergieberater (HWK) · Eingetragener Energieeffizienz-Experte (dena) ·{" "}
+                <Link href="/ueber-uns" style={{ color: "var(--color-primary)" }}>Über mich</Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

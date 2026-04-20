@@ -33,7 +33,7 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
@@ -46,13 +46,21 @@ const jsonLd = {
   })),
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://www.planungsbuero-bless.de" },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: "https://www.planungsbuero-bless.de/leistungen" },
+    { "@type": "ListItem", position: 3, name: "Wärmeschutznachweis", item: "https://www.planungsbuero-bless.de/leistungen/waermeschutznachweis" },
+  ],
+};
+
 export default function WaermeschutznachweisSeitePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav
         style={{
@@ -159,9 +167,9 @@ export default function WaermeschutznachweisSeitePage() {
               }}
             >
               Der Wärmeschutznachweis gemäß Gebäudeenergiegesetz (GEG) ist bei jedem Neubau und
-              bei wesentlichen Änderungen am Bestand gesetzlich vorgeschrieben. Er belegt gegenüber
-              der Baubehörde, dass die energetischen Mindestanforderungen eingehalten werden – und
-              ist zugleich Grundlage für zahlreiche Förderanträge.
+              bei wesentlichen Änderungen am Bestand gesetzlich vorgeschrieben. Christopher Bless
+              erstellt den Nachweis in Mönchengladbach rechtssicher und prüffähig – als Grundlage
+              für die Baugenehmigung und für Förderanträge bei BAFA und KfW.
             </p>
             <div
               style={{
@@ -233,6 +241,84 @@ export default function WaermeschutznachweisSeitePage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Erweiterter Inhalt */}
+      <section style={{ padding: "4rem 2rem", background: "var(--color-background)" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem", marginTop: "0" }}>
+            Was ist ein Wärmeschutznachweis nach GEG?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Der Wärmeschutznachweis ist ein rechnerischer Nachweis, der belegt, dass ein Gebäude
+            die energetischen Mindestanforderungen des Gebäudeenergiegesetzes (GEG) einhält. Er
+            umfasst die Berechnung des Jahresprimärenergiebedarfs, die Einhaltung der
+            Mindest-Wärmedurchgangskoeffizienten (U-Werte) für alle Bauteile der Gebäudehülle sowie
+            den Nachweis des sommerlichen Wärmeschutzes. Der Nachweis ist Bestandteil der
+            Bauvorlageberechtigung und muss der Baubehörde in prüffähiger Form vorgelegt werden.
+            Er unterscheidet sich grundlegend vom Energieausweis: Während der Energieausweis ein
+            Informationsdokument für Käufer und Mieter ist, ist der Wärmeschutznachweis ein
+            behördlich geforderter Pflichtnachweis.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Wann brauche ich einen Wärmeschutznachweis?
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Ein Wärmeschutznachweis ist grundsätzlich bei Neubauten erforderlich – für Wohngebäude
+            ebenso wie für Nichtwohngebäude. Darüber hinaus ist er bei wesentlichen Änderungen an
+            Bestandsgebäuden notwendig: Dazu zählen Anbauten, Aufstockungen, Dachgeschossausbauten
+            und umfangreiche Fassadensanierungen, bei denen mehr als 10 % der Bauteilfläche
+            betroffen sind. Auch für die Beantragung von KfW-Effizienzhaus-Förderungen und
+            BAFA-BEG-Mitteln ist der Wärmeschutznachweis als rechnerische Grundlage
+            unverzichtbar – er bildet die Basis für die Bestätigung zum Antrag (BzA), ohne die
+            kein{" "}
+            <Link href="/leistungen/effizienzhaus" style={{ color: "var(--color-primary)" }}>
+              Effizienzhaus-Förderantrag
+            </Link>{" "}
+            gestellt werden kann.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Wärmeschutznachweis und Baugenehmigung in NRW
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
+            In Nordrhein-Westfalen regelt § 68 BauO NRW die Pflicht zur Vorlage bauordnungsrechtlicher
+            Nachweise. Der Wärmeschutznachweis nach GEG gehört zu den prüfpflichtigen Standsicherheits-
+            und Wärmeschutznachweisen, die spätestens mit dem Bauantrag bei der zuständigen Baubehörde
+            eingereicht werden müssen. In Mönchengladbach ist das die Untere Bauaufsichtsbehörde.
+            Planungsbüro Bless erstellt den Nachweis in einem Format, das die Anforderungen der
+            nordrhein-westfälischen Bauaufsicht erfüllt und direkt als Anlage zum Bauantrag verwendet
+            werden kann – rechtssicher und ohne Nachbesserungsbedarf.
+          </p>
+
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
+            Kosten und Ablauf des Wärmeschutznachweises
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
+            Die Kosten für einen Wärmeschutznachweis liegen je nach Gebäudegröße und Komplexität
+            zwischen 400 und 900 € netto für ein Einfamilienhaus. Der Ablauf bei Planungsbüro Bless:
+            Zunächst werden alle Planungsunterlagen übermittelt (Grundrisse, Schnitte, Ansichten,
+            Bauteilaufbauten). Christopher Bless erstellt daraus die vollständige Energiebilanz,
+            prüft die GEG-Konformität und erstellt die prüffähige Dokumentation. Nach Freigabe
+            durch den Auftraggeber wird der Nachweis dem Architekten oder direkt der Baubehörde
+            zur Verfügung gestellt. Die Bearbeitungszeit beträgt in der Regel 5–10 Werktage nach
+            Eingang aller vollständigen Unterlagen.
+          </p>
+
+          <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ flexShrink: 0, width: "44px", height: "44px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FAF7F2", fontWeight: 700, fontSize: "1.1rem" }}>CB</div>
+            <div>
+              <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text)" }}>Christopher Bless</div>
+              <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
+                Gebäudeenergieberater (HWK) · Eingetragener Energieeffizienz-Experte (dena) ·{" "}
+                <Link href="/ueber-uns" style={{ color: "var(--color-primary)" }}>Über mich</Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

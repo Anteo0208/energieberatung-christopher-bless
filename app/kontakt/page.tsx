@@ -180,9 +180,23 @@ export default function KontaktPage() {
             <br />
             <em style={{ color: "var(--color-primary)", fontStyle: "italic" }}>Ihr Gebäude</em>
           </h1>
-          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: "480px" }}>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: "480px", marginBottom: "2rem" }}>
             Beantworten Sie ein paar kurze Fragen – damit wir uns optimal auf Sie vorbereiten können.
           </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", fontSize: "0.9rem", color: "var(--color-text-muted)" }}>
+            <a href="tel:+4917253777010" style={{ color: "var(--color-primary)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.4rem", fontWeight: 500 }}>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 9.5c-.8-.1-1.6-.3-2.3-.6-.3-.1-.7 0-.9.2l-1 1c-1.4-.8-2.6-2-3.4-3.4l1-1c.2-.2.3-.6.2-.9C5.3 4.1 5.1 3.3 5 2.5c-.1-.6-.6-1-1.2-1H2.5C1.8 1.5 1 2 1 2.8 1 9 6 14 12.2 14c.8 0 1.3-.8 1.3-1.5v-1.8c0-.6-.4-1.1-1-.9" strokeLinecap="round"/></svg>
+              +49 172 5377710
+            </a>
+            <a href="mailto:info@planungsbuero-bless.de" style={{ color: "var(--color-primary)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.4rem", fontWeight: 500 }}>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="1" y="3" width="13" height="9" rx="1.5"/><path d="M1 3l6.5 5.5L14 3" strokeLinecap="round"/></svg>
+              info@planungsbuero-bless.de
+            </a>
+            <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M7.5 1C5 1 3 3 3 5.5c0 3.5 4.5 8.5 4.5 8.5S12 9 12 5.5C12 3 10 1 7.5 1z"/><circle cx="7.5" cy="5.5" r="1.5"/></svg>
+              Mülgaustraße 153a, 41199 Mönchengladbach
+            </span>
+          </div>
         </div>
       </section>
 
@@ -327,6 +341,13 @@ export default function KontaktPage() {
                         </>
                       )}
                     </button>
+                    <p style={{ marginTop: "1rem", fontSize: "0.8rem", color: "var(--color-text-muted)", lineHeight: 1.6 }}>
+                      Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer{" "}
+                      <a href="/datenschutz" style={{ color: "var(--color-primary)", textDecoration: "underline" }}>
+                        Datenschutzerklärung
+                      </a>{" "}
+                      zu. Kein Spam, keine Weitergabe an Dritte.
+                    </p>
                   </form>
                 )}
               </div>

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://www.planungsbuero-bless.de/kontakt",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kontakt – Planungsbüro Bless Mönchengladbach",

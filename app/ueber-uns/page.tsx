@@ -58,8 +58,64 @@ export default function UeberUnsPage() {
   const { ref: valuesRef, inView: valuesInView } = useInView();
   const { ref: qualRef, inView: qualInView } = useInView();
 
+  const personLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.planungsbuero-bless.de/ueber-uns#christopher-bless",
+    name: "Christopher Bless",
+    givenName: "Christopher",
+    familyName: "Bless",
+    jobTitle: "Gebäudeenergieberater (HWK)",
+    description:
+      "Zertifizierter Gebäudeenergieberater, eingetragener Energieeffizienz-Experte und staatlich geprüfter Hochbautechniker mit über 15 Jahren Erfahrung in der energetischen Gebäudeberatung.",
+    url: "https://www.planungsbuero-bless.de/ueber-uns",
+    image: "https://www.planungsbuero-bless.de/Portrait-3.png.png",
+    worksFor: {
+      "@id": "https://www.planungsbuero-bless.de/#business",
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Gebäudeenergieberater (HWK)",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Handwerkskammer Düsseldorf",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Eingetragener Energieeffizienz-Experte",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Deutsche Energie-Agentur (dena)",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Staatlich geprüfter Hochbautechniker",
+        credentialCategory: "degree",
+      },
+    ],
+    knowsAbout: [
+      "Heizlastberechnung nach DIN EN 12831",
+      "Hydraulischer Abgleich Verfahren B",
+      "Individueller Sanierungsfahrplan (iSFP)",
+      "Wärmeschutznachweis GEG",
+      "Effizienzhaus KfW",
+      "Lebenszyklusanalyse DIN EN ISO 14040",
+      "BAFA Förderanträge",
+      "Wärmebrückenberechnung DIN ISO 10211",
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+      />
       {/* Hero */}
       <section
         style={{
@@ -106,17 +162,19 @@ export default function UeberUnsPage() {
                 marginBottom: "1.5rem",
               }}
             >
-              Planungsbüro Bless –
+              Christopher Bless –
               <br />
               <em style={{ color: "var(--color-primary)", fontStyle: "italic" }}>Ihr Energieberater</em>
             </h1>
             <p style={{ fontSize: "1.05rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
-              Energieberatung ist mehr als das Ausfüllen von Förderanträgen. Es geht darum,
-              Gebäude wirklich zu verstehen – die Physik, die Technik, die Menschen, die darin leben.
+              Energieberatung ist mehr als das Ausfüllen von Förderanträgen. Als Gebäudeenergieberater (HWK)
+              und eingetragener Energieeffizienz-Experte gehe ich darum, Gebäude wirklich zu verstehen –
+              die Physik, die Technik, die Menschen, die darin leben.
             </p>
             <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
-              Mit über 15 Jahren Erfahrung in der energetischen Gebäudeberatung kennen wir die Fallstricke
-              und Potenziale eines jeden Sanierungsprojekts. Wir beraten Sie nicht nur – wir begleiten Sie.
+              Mit über 15 Jahren Erfahrung in der energetischen Gebäudeberatung in Mönchengladbach und
+              der gesamten Region NRW kenne ich die Fallstricke und Potenziale eines jeden
+              Sanierungsprojekts. Ich berate Sie nicht nur – ich begleite Sie.
             </p>
             <Link
               href="/kontakt"
@@ -155,7 +213,7 @@ export default function UeberUnsPage() {
             >
               <Image
                 src="/Portrait-3.png.png"
-                alt="Planungsbüro Bless – Christopher Bless"
+                alt="Christopher Bless – Gebäudeenergieberater (HWK), Planungsbüro Bless Mönchengladbach"
                 fill
                 style={{ objectFit: "contain", objectPosition: "center center" }}
                 priority
