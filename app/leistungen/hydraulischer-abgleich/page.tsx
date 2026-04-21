@@ -19,7 +19,7 @@ const faqItems = [
   {
     question: "Ist der hydraulische Abgleich Pflicht?",
     answer:
-      "Seit 2023 ist der hydraulische Abgleich nach Verfahren B Pflicht für Gebäude mit zentraler Heizung ab 6 Wohneinheiten. Für die BAFA-Förderung ist er generell Pflichtbestandteil.",
+      "Mittlerweile ist der hydraulische Abgleich nach Verfahren B Pflicht für Gebäude mit zentraler Heizung ab 6 Wohneinheiten. Für die BAFA-Förderung ist er generell Pflichtbestandteil.",
   },
   {
     question: "Was kostet ein hydraulischer Abgleich?",
@@ -167,9 +167,9 @@ export default function HydraulischerAbgleichPage() {
               }}
             >
               Der hydraulische Abgleich nach Verfahren B sorgt dafür, dass jeder Heizkörper im
-              System genau die richtige Wassermenge erhält. In Mönchengladbach begleitet Christopher
-              Bless Eigentümer durch den gesamten Prozess – von der raumweisen Heizlastberechnung
-              bis zur normgerechten Dokumentation für den Förderantrag.
+              System genau die richtige Wassermenge erhält. Wir begleiten Sie in Mönchengladbach
+              durch den gesamten Prozess – von der raumweisen Heizlastberechnung bis zur
+              normgerechten Dokumentation für den Förderantrag.
             </p>
             <div
               style={{
@@ -267,15 +267,15 @@ export default function HydraulischerAbgleichPage() {
           </p>
 
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
-            Hydraulischer Abgleich Pflicht 2024 – wann greift das GEG?
+            Hydraulischer Abgleich als Pflichtmaßnahme – wann greift das GEG?
           </h2>
           <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
-            Seit der GEG-Novelle 2024 ist der hydraulische Abgleich nach Verfahren B bei jedem
+            Laut aktueller GEG-Novelle ist der hydraulische Abgleich nach Verfahren B bei jedem
             Heizungstausch, der über BAFA-Bundesförderung für effiziente Gebäude (BEG EM) gefördert
             wird, als Pflichtmaßnahme vorgeschrieben. Ohne nachgewiesenen hydraulischen Abgleich
             wird der Förderantrag abgelehnt. Zusätzlich schreibt die Energieeinsparverordnung für
             Gebäude mit zentraler Wärmeversorgung und mindestens sechs Wohneinheiten den Abgleich
-            bereits seit 2023 vor. Wer eine Wärmepumpe, einen Pelletkessel oder eine neue
+            generell vor. Wer eine Wärmepumpe, einen Pelletkessel oder eine neue
             Zentralheizung plant, sollte den hydraulischen Abgleich daher von Anfang an einplanen –
             er ist sowohl Fördervoraussetzung als auch wirtschaftlich sinnvoll.
           </p>

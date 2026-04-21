@@ -167,9 +167,9 @@ export default function WaermeschutznachweisSeitePage() {
               }}
             >
               Der Wärmeschutznachweis gemäß Gebäudeenergiegesetz (GEG) ist bei jedem Neubau und
-              bei wesentlichen Änderungen am Bestand gesetzlich vorgeschrieben. Christopher Bless
-              erstellt den Nachweis in Mönchengladbach rechtssicher und prüffähig – als Grundlage
-              für die Baugenehmigung und für Förderanträge bei BAFA und KfW.
+              bei wesentlichen Änderungen am Bestand gesetzlich vorgeschrieben. Wir erstellen den
+              Nachweis in Mönchengladbach rechtssicher und prüffähig – als Grundlage für die
+              Baugenehmigung und für Förderanträge bei BAFA und KfW.
             </p>
             <div
               style={{

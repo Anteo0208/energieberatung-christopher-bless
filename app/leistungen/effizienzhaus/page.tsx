@@ -167,9 +167,9 @@ export default function EffizienzhausPage() {
               }}
             >
               Die Sanierung oder der Neubau auf Effizienzhaus-Niveau ist die umfangreichste Form
-              der energetischen Gebäudeoptimierung. Christopher Bless begleitet Bauherren und
-              Eigentümer in Mönchengladbach als zugelassener Energieeffizienz-Experte – von der
-              Planung bis zur Abschlussdokumentation für maximale KfW-Förderung.
+              der energetischen Gebäudeoptimierung. Als zugelassener Energieeffizienz-Experte
+              begleiten wir Bauherren und Eigentümer in Mönchengladbach – von der Planung bis zur
+              Abschlussdokumentation für maximale KfW-Förderung.
             </p>
             <div
               style={{
@@ -280,7 +280,7 @@ export default function EffizienzhausPage() {
           </p>
 
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
-            Wie hoch ist die KfW-Förderung 2024 für Effizienzhaus-Sanierung?
+            Wie hoch ist die aktuelle KfW-Förderung für Effizienzhaus-Sanierung?
           </h2>
           <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
             Im Rahmen des BEG Wohngebäude (BEG WG) fördert die KfW die Sanierung auf

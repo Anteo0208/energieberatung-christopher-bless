@@ -167,9 +167,9 @@ export default function LebenszyklusanalysePage() {
               }}
             >
               Die Lebenszyklusanalyse (LCA) bewertet die Umweltwirkungen eines Gebäudes über
-              seinen gesamten Lebenszyklus nach DIN EN ISO 14040/14044. Christopher Bless erstellt
-              die LCA in Mönchengladbach auf Basis der ÖKOBAUDAT-Datenbank – als Pflichtnachweis
-              für das QNG-Siegel und die KfW-Klimabonus-Förderung mit belastbaren Kennzahlen zu
+              seinen gesamten Lebenszyklus nach DIN EN ISO 14040/14044. Wir erstellen die LCA in
+              Mönchengladbach auf Basis der ÖKOBAUDAT-Datenbank – als Pflichtnachweis für das
+              QNG-Siegel und die KfW-Klimabonus-Förderung mit belastbaren Kennzahlen zu
               Treibhausgasemissionen und Primärenergiebedarf.
             </p>
             <div

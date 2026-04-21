@@ -167,9 +167,9 @@ export default function EinzelmassnahmenPage() {
               }}
             >
               Einzelmaßnahmen nach dem Bundesförderungsprogramm für effiziente Gebäude (BEG EM)
-              bieten attraktive Zuschüsse für gezielte Sanierungsschritte. In Mönchengladbach
-              begleitet Christopher Bless Eigentümer durch den gesamten Prozess – von der
-              Antragstellung bis zur Verwendungsnachweis-Erstellung.
+              bieten attraktive Zuschüsse für gezielte Sanierungsschritte. Wir begleiten Sie in
+              Mönchengladbach durch den gesamten Prozess – von der Antragstellung bis zur
+              Verwendungsnachweis-Erstellung.
             </p>
             <div
               style={{
@@ -279,7 +279,7 @@ export default function EinzelmassnahmenPage() {
           </p>
 
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text)", marginBottom: "1rem" }}>
-            Wie hoch ist die BAFA-Förderung 2024?
+            Wie hoch ist die aktuelle BAFA-Förderung?
           </h2>
           <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
             Der Grundfördersatz im BEG EM beträgt 15 % der förderfähigen Nettoinvestitionskosten.

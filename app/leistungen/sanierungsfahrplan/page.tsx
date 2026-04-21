@@ -167,8 +167,8 @@ export default function SanierungsfahrplanPage() {
               }}
             >
               Der individuelle Sanierungsfahrplan (iSFP) ist Ihr maßgeschneiderter Leitfaden für
-              die schrittweise energetische Sanierung Ihres Gebäudes. Christopher Bless erstellt
-              den iSFP in Mönchengladbach als eingetragener Energieeffizienz-Experte – er zeigt
+              die schrittweise energetische Sanierung Ihres Gebäudes. Als eingetragenes Büro auf
+              der Expertenliste der dena erstellen wir den iSFP in Mönchengladbach – und zeigen
               Ihnen, welche Maßnahmen in welcher Reihenfolge den größten Nutzen bringen und welche
               Förderungen Ihnen zustehen.
             </p>

@@ -167,10 +167,9 @@ export default function WaermebrueckenPage() {
               }}
             >
               Wärmebrücken sind oft der entscheidende Faktor, der einen hohen Energieeffizienz-
-              Standard verhindert oder zu Schimmel führt. Christopher Bless ermittelt in
-              Mönchengladbach mit der numerischen Wärmebrückenberechnung nach DIN ISO 10211
-              präzise Ψ-Werte für jeden kritischen Anschlussdetail – und optimiert die
-              Konstruktion gezielt.
+              Standard verhindert oder zu Schimmel führt. Mit der numerischen Wärmebrücken-
+              berechnung nach DIN ISO 10211 ermitteln wir in Mönchengladbach präzise Ψ-Werte
+              für jeden kritischen Anschlussdetail – und optimieren die Konstruktion gezielt.
             </p>
             <div
               style={{

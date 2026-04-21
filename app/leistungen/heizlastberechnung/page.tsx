@@ -164,9 +164,9 @@ export default function HeizlastberechnungPage() {
               }}
             >
               Die Heizlastberechnung nach DIN EN 12831 ist das Fundament einer korrekt ausgelegten
-              Heizungsanlage. Als zertifizierter Energieberater in Mönchengladbach ermittelt
-              Christopher Bless präzise, wie viel Wärme Ihr Gebäude unter Normbedingungen
-              maximal benötigt – Raum für Raum, normgerecht und förderkonform.
+              Heizungsanlage. Als zertifizierter Energieberater in Mönchengladbach ermitteln wir
+              präzise, wie viel Wärme Ihr Gebäude unter Normbedingungen maximal benötigt –
+              Raum für Raum, normgerecht und förderkonform.
             </p>
             <div
               style={{
@@ -263,7 +263,7 @@ export default function HeizlastberechnungPage() {
             Wann ist eine Heizlastberechnung Pflicht?
           </h2>
           <p style={{ fontSize: "1rem", color: "var(--color-text-muted)", lineHeight: 1.8, marginBottom: "2rem" }}>
-            Seit der Novellierung des Gebäudeenergiegesetzes (GEG 2024) ist die Heizlastberechnung
+            Seit der Novellierung des Gebäudeenergiegesetzes (GEG) ist die Heizlastberechnung
             nach DIN EN 12831 bei Beantragung von Bundesförderung für effiziente Gebäude (BEG) beim
             BAFA oder der KfW verpflichtend. Wer eine neue Wärmepumpe, einen Heizkessel oder eine
             Fernwärmeanbindung förderfähig installieren möchte, muss den Nachweis durch einen
