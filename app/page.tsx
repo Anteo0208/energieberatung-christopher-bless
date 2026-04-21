@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -141,233 +142,276 @@ export default function Home() {
       <section
         style={{
           minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
+          display: "grid",
+          gridTemplateColumns: "55% 45%",
           position: "relative",
           overflow: "hidden",
-          background: "var(--color-background)",
-          paddingTop: "72px",
+          paddingTop: "88px",
         }}
+        className="hero-grid"
       >
+        {/* LEFT */}
         <div
           style={{
-            position: "absolute",
-            top: "10%",
-            right: "-5%",
-            width: "500px",
-            height: "500px",
-            background: "radial-gradient(ellipse, rgba(45,80,22,0.08) 0%, transparent 70%)",
-            borderRadius: "60% 40% 70% 30% / 50% 60% 40% 50%",
-            pointerEvents: "none",
+            padding: "5rem 3.5rem 4rem 3rem",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            position: "relative",
+            zIndex: 2,
           }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "5%",
-            left: "-8%",
-            width: "400px",
-            height: "400px",
-            background: "radial-gradient(ellipse, rgba(139,69,19,0.07) 0%, transparent 70%)",
-            borderRadius: "40% 60% 30% 70% / 60% 40% 50% 50%",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "1rem 2rem 1rem 4rem",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "4rem",
-            alignItems: "center",
-            width: "100%",
-          }}
-          className="hero-grid"
         >
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              marginBottom: "1.75rem",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "10px",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              color: "var(--color-secondary)",
+            }}
+          >
+            <span style={{ width: "28px", height: "1px", background: "var(--color-secondary)", display: "inline-block" }} />
+            Energieberater Mönchengladbach
+          </motion.div>
 
-            <h1
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            style={{
+              fontFamily: "'Arial Black', Arial, sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(2.5rem, 5vw, 4.25rem)",
+              lineHeight: 1.08,
+              letterSpacing: "-1.5px",
+              color: "var(--color-text)",
+              marginBottom: "2rem",
+            }}
+          >
+            Energie sparen.
+            <br />
+            <em style={{ fontStyle: "normal", color: "var(--color-primary)" }}>
+              Clever sanieren.
+            </em>
+            <br />
+            <span style={{ color: "#8B9180" }}>Wert steigern.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            style={{
+              fontSize: "1.05rem",
+              color: "var(--color-text-muted)",
+              lineHeight: 1.75,
+              maxWidth: "420px",
+              marginBottom: "2.5rem",
+            }}
+          >
+            Von der Heizlastberechnung bis zum individuellen Sanierungsfahrplan —
+            Ihr zertifizierter BAFA-Energieberater mit über 15 Jahren Erfahrung.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            style={{ display: "flex", gap: "1.25rem", alignItems: "center", flexWrap: "wrap" }}
+          >
+            <Link
+              href="/kontakt"
               style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                background: "var(--color-primary)",
+                color: "#FAF7F2",
+                padding: "0.85rem 2rem",
+                borderRadius: "4px",
+                textDecoration: "none",
+                fontFamily: "Arial, sans-serif",
+                fontSize: "0.95rem",
                 fontWeight: 700,
-                color: "var(--color-text)",
-                lineHeight: 1.1,
-                marginBottom: "1.5rem",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                boxShadow: "0 6px 24px rgba(45,80,22,0.25)",
               }}
             >
-              Energie sparen.
-              <br />
-              <em style={{ color: "var(--color-primary)", fontStyle: "italic" }}>
-                Clever sanieren.
-              </em>
-              <br />
-              Wert steigern.
-            </h1>
-
-            <p
-              style={{
-                fontSize: "1.1rem",
-                color: "var(--color-text-muted)",
-                lineHeight: 1.75,
-                maxWidth: "480px",
-                marginBottom: "2.5rem",
-              }}
-            >
-              Von der präzisen Heizlastberechnung bis zum individuellen Sanierungsfahrplan –
-              wir begleiten Sie auf dem Weg zum energieeffizienten Gebäude.
-            </p>
-
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link
-                href="/kontakt"
-                style={{
-                  background: "var(--color-primary)",
-                  color: "#FAF7F2",
-                  padding: "0.85rem 2rem",
-                  borderRadius: "4px",
-                  textDecoration: "none",
-                  fontSize: "1rem",
-                  fontWeight: 600,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  boxShadow: "0 4px 20px rgba(45,80,22,0.25)",
-                }}
-              >
-                Kostenlose Beratung anfragen
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-              <Link
-                href="/leistungen"
-                style={{
-                  border: "2px solid var(--color-border)",
-                  color: "var(--color-text)",
-                  padding: "0.85rem 1.75rem",
-                  borderRadius: "4px",
-                  textDecoration: "none",
-                  fontSize: "1rem",
-                  fontWeight: 500,
-                }}
-              >
-                Leistungen entdecken
-              </Link>
-            </div>
-          </div>
-
-          {/* Right: illustration */}
-          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            <div
-              style={{
-                background: "#F5F0E8",
-                border: "1px solid var(--color-border)",
-                borderRadius: "20px",
-                width: "100%",
-                maxWidth: "650px",
-                aspectRatio: "4/3",
-                overflow: "hidden",
-                boxShadow: "0 20px 60px rgba(45,80,22,0.1)",
-              }}
-            >
-              <svg viewBox="0 0 420 315" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "100%", display: "block" }}>
-                <rect width="420" height="315" fill="#F5F0E8" />
-
-                {/* ── Header ── */}
-                <text x="22" y="22" fontFamily="sans-serif" fontSize="7" fontWeight="700" letterSpacing="1.5" fill="#8B4513" textAnchor="start">VORTEILE DURCH BEAUFTRAGUNG</text>
-                <text x="22" y="33" fontFamily="sans-serif" fontSize="7" fontWeight="700" letterSpacing="1.5" fill="#8B4513" textAnchor="start">EINES ENERGIEBERATERS</text>
-                <line x1="22" y1="41" x2="398" y2="41" stroke="#D4C9B8" strokeWidth="1" />
-
-                {/* ── LEFT: mini house with numbered measure pointers ── */}
-                {/* House body */}
-                <path d="M48,175 L48,248 L178,248 L178,175" fill="#F5F0E8" stroke="#333" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
-                {/* Roof */}
-                <polyline points="36,179 113,110 190,179" fill="none" stroke="#333" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
-                {/* Door */}
-                <rect x="96" y="214" width="34" height="34" rx="2" fill="none" stroke="#333" strokeWidth="1.8" />
-                <circle cx="126" cy="231" r="2" fill="#333" />
-                {/* Window */}
-                <rect x="56" y="196" width="26" height="21" rx="2" fill="none" stroke="#333" strokeWidth="1.6" />
-                <line x1="69" y1="196" x2="69" y2="217" stroke="#333" strokeWidth="1" />
-                <line x1="56" y1="206" x2="82" y2="206" stroke="#333" strokeWidth="1" />
-                {/* Ground */}
-                <line x1="22" y1="248" x2="198" y2="248" stroke="#333" strokeWidth="2" strokeLinecap="round" />
-
-                {/* Measure pointer: ① Dach */}
-                <circle cx="28" cy="108" r="9" fill="#2D5016" />
-                <text x="28" y="112" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">1</text>
-                <line x1="37" y1="108" x2="94" y2="122" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
-
-                {/* Measure pointer: ② Fassade */}
-                <circle cx="22" cy="200" r="9" fill="#2D5016" />
-                <text x="22" y="204" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">2</text>
-                <line x1="31" y1="200" x2="48" y2="200" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
-
-                {/* Measure pointer: ③ Fenster – points to window */}
-                <circle cx="28" cy="232" r="9" fill="#2D5016" />
-                <text x="28" y="236" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">3</text>
-                <line x1="37" y1="228" x2="56" y2="211" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
-
-                {/* Measure pointer: ④ Heizung */}
-                <circle cx="190" cy="220" r="9" fill="#2D5016" />
-                <text x="190" y="224" textAnchor="middle" fill="#FAF7F2" fontSize="9" fontWeight="700" fontFamily="sans-serif">4</text>
-                <line x1="181" y1="220" x2="178" y2="220" stroke="#2D5016" strokeWidth="1.3" strokeDasharray="3,2" />
-
-                {/* ── DIVIDER ── */}
-                <line x1="210" y1="48" x2="210" y2="295" stroke="#D4C9B8" strokeWidth="1" />
-
-                {/* ── RIGHT: 4-step roadmap ── */}
-                {/* Vertical timeline line */}
-                <line x1="242" y1="75" x2="242" y2="272" stroke="#D4C9B8" strokeWidth="1.5" />
-
-                {/* Step 1: Ist-Analyse */}
-                <circle cx="242" cy="82" r="10" fill="#2D5016" />
-                {/* magnifier icon */}
-                <circle cx="241" cy="81" r="4" fill="none" stroke="#FAF7F2" strokeWidth="1.4" />
-                <line x1="244" y1="84" x2="247" y2="87" stroke="#FAF7F2" strokeWidth="1.4" strokeLinecap="round" />
-                <text x="260" y="79" fontFamily="sans-serif" fontSize="9" fontWeight="700" fill="#1C1C1C">Ist-Analyse</text>
-                <text x="260" y="90" fontFamily="sans-serif" fontSize="7.5" fill="#6B6B5A">Gebäudeaufnahme vor Ort</text>
-
-                {/* Step 2: Maßnahmenplan */}
-                <circle cx="242" cy="134" r="10" fill="#2D5016" />
-                {/* list icon */}
-                <line x1="237" y1="131" x2="247" y2="131" stroke="#FAF7F2" strokeWidth="1.4" strokeLinecap="round" />
-                <line x1="237" y1="134" x2="247" y2="134" stroke="#FAF7F2" strokeWidth="1.4" strokeLinecap="round" />
-                <line x1="237" y1="137" x2="244" y2="137" stroke="#FAF7F2" strokeWidth="1.4" strokeLinecap="round" />
-                <text x="260" y="131" fontFamily="sans-serif" fontSize="9" fontWeight="700" fill="#1C1C1C">Maßnahmenplan</text>
-                <text x="260" y="142" fontFamily="sans-serif" fontSize="7.5" fill="#6B6B5A">Stufenweise Sanierung planen</text>
-
-                {/* Step 3: Förderung */}
-                <circle cx="242" cy="186" r="10" fill="#2D5016" />
-                {/* € icon */}
-                <text x="242" y="190" textAnchor="middle" fill="#FAF7F2" fontSize="10" fontWeight="700" fontFamily="sans-serif">€</text>
-                <text x="260" y="183" fontFamily="sans-serif" fontSize="9" fontWeight="700" fill="#1C1C1C">Förderung sichern</text>
-                <text x="260" y="194" fontFamily="sans-serif" fontSize="7.5" fill="#6B6B5A">BAFA &amp; KfW beantragen</text>
-
-                {/* Step 4: Umsetzung */}
-                <circle cx="242" cy="238" r="10" fill="#C8A87C" stroke="#333" strokeWidth="1.5" />
-                {/* checkmark */}
-                <polyline points="237,238 241,242 248,234" fill="none" stroke="#333" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                <text x="260" y="235" fontFamily="sans-serif" fontSize="9" fontWeight="700" fill="#1C1C1C">Umsetzung &amp; Nachweis</text>
-                <text x="260" y="246" fontFamily="sans-serif" fontSize="7.5" fill="#6B6B5A">Begleitung bis zur Fertigstellung</text>
-
-                {/* ── Legend box bottom left ── */}
-                <rect x="22" y="282" width="176" height="24" rx="5" fill="rgba(45,80,22,0.08)" />
-                <text x="110" y="290" textAnchor="middle" fontFamily="sans-serif" fontSize="7" fontWeight="600" fill="#2D5016" letterSpacing="0.5">FÖRDERFÄHIG NACH GEG</text>
-                <text x="110" y="300" textAnchor="middle" fontFamily="sans-serif" fontSize="7.5" fill="#2D5016">Bis zu 20 % Förderung</text>
-
-                {/* ── Energy class strip bottom right ── */}
-                <rect x="222" y="282" width="176" height="24" rx="5" fill="#2D5016" />
-                <text x="266" y="297" textAnchor="middle" fontFamily="sans-serif" fontSize="8" fontWeight="700" fill="#FAF7F2" letterSpacing="0.5">KLASSE D</text>
-                <text x="310" y="297" textAnchor="middle" fontFamily="sans-serif" fontSize="11" fill="#C8A87C">→</text>
-                <text x="354" y="297" textAnchor="middle" fontFamily="sans-serif" fontSize="8" fontWeight="700" fill="#6BBF35" letterSpacing="0.5">KLASSE A</text>
+              Kostenlose Beratung anfragen
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </div>
-          </div>
+            </Link>
+            <Link
+              href="/leistungen"
+              style={{
+                color: "var(--color-text)",
+                fontSize: "0.95rem",
+                fontWeight: 500,
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                borderBottom: "1.5px solid var(--color-border)",
+                paddingBottom: "2px",
+              }}
+            >
+              Leistungen entdecken
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* RIGHT — Framer Motion energy flow animation */}
+        <div
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            background: "#F5F0E8",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              left: 0, top: 0, bottom: 0,
+              width: "60px",
+              background: "linear-gradient(to right, #FAF7F2, transparent)",
+              zIndex: 4,
+              pointerEvents: "none",
+            }}
+          />
+          <svg
+            viewBox="0 0 460 600"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+          >
+            <defs>
+              <linearGradient id="lg1" x1="0" y1="1" x2="0.4" y2="0" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stopColor="#2D5016" stopOpacity="0" />
+                <stop offset="50%" stopColor="#2D5016" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#6BBF35" stopOpacity="0.7" />
+              </linearGradient>
+              <linearGradient id="lg2" x1="0" y1="1" x2="0.5" y2="0" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stopColor="#8B4513" stopOpacity="0" />
+                <stop offset="60%" stopColor="#C8A96E" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#FFD700" stopOpacity="0.5" />
+              </linearGradient>
+              <linearGradient id="lg3" x1="0" y1="1" x2="0.6" y2="0" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stopColor="#6BBF35" stopOpacity="0" />
+                <stop offset="100%" stopColor="#6BBF35" stopOpacity="0.8" />
+              </linearGradient>
+              <linearGradient id="lg4" x1="0" y1="1" x2="0.5" y2="0" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stopColor="#3D9BE9" stopOpacity="0" />
+                <stop offset="100%" stopColor="#3D9BE9" stopOpacity="0.5" />
+              </linearGradient>
+              <radialGradient id="bgGlow" cx="50%" cy="40%" r="55%">
+                <stop offset="0%" stopColor="#2D5016" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#F5F0E8" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+
+            <rect width="460" height="600" fill="url(#bgGlow)" />
+
+            <g stroke="#C8BFB0" strokeWidth="0.4" strokeOpacity="0.25">
+              <line x1="92" y1="0" x2="92" y2="600" />
+              <line x1="184" y1="0" x2="184" y2="600" />
+              <line x1="276" y1="0" x2="276" y2="600" />
+              <line x1="368" y1="0" x2="368" y2="600" />
+              <line x1="0" y1="150" x2="460" y2="150" />
+              <line x1="0" y1="300" x2="460" y2="300" />
+              <line x1="0" y1="450" x2="460" y2="450" />
+            </g>
+
+            <motion.path
+              d="M 60 600 C 40 500 100 420 80 320 C 60 220 140 160 120 60"
+              fill="none" stroke="url(#lg1)" strokeWidth="4" strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 3.5, ease: "easeInOut", delay: 0 }}
+            />
+            <motion.path
+              d="M 160 600 C 145 510 200 430 185 330 C 170 230 240 165 225 65"
+              fill="none" stroke="url(#lg3)" strokeWidth="3" strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 3.5, ease: "easeInOut", delay: 0.5 }}
+            />
+            <motion.path
+              d="M 300 600 C 275 510 340 420 320 320 C 300 220 370 155 355 55"
+              fill="none" stroke="url(#lg2)" strokeWidth="3.5" strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 3, ease: "easeInOut", delay: 0.9 }}
+            />
+            <motion.path
+              d="M 420 600 C 400 510 445 430 430 340 C 415 250 455 180 445 80"
+              fill="none" stroke="url(#lg4)" strokeWidth="2.5" strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 3, ease: "easeInOut", delay: 1.3 }}
+            />
+            <motion.path
+              d="M 110 600 C 95 510 150 420 130 325 C 110 230 185 160 170 60"
+              fill="none" stroke="#2D5016" strokeWidth="1.2" strokeOpacity="0.3" strokeLinecap="round"
+              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+              transition={{ duration: 3.5, ease: "easeInOut", delay: 0.5 }}
+            />
+            <motion.path
+              d="M 240 600 C 225 510 275 425 260 325 C 245 225 310 158 295 58"
+              fill="none" stroke="#C8A96E" strokeWidth="1" strokeOpacity="0.35" strokeLinecap="round"
+              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+              transition={{ duration: 3, ease: "easeInOut", delay: 0.9 }}
+            />
+
+            <motion.g
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 2.5 }}
+            >
+              <path d="M 140 430 L 140 530 L 320 530 L 320 430" fill="rgba(45,80,22,0.12)" stroke="#2D5016" strokeWidth="2.2" strokeOpacity="0.45" strokeLinejoin="round" />
+              <polyline points="126,436 230,345 334,436" fill="none" stroke="#2D5016" strokeWidth="2.2" strokeOpacity="0.45" strokeLinejoin="round" />
+              <rect x="200" y="468" width="60" height="62" rx="2" fill="none" stroke="#2D5016" strokeWidth="1.5" strokeOpacity="0.35" />
+              <rect x="150" y="472" width="36" height="28" rx="2" fill="none" stroke="#2D5016" strokeWidth="1.2" strokeOpacity="0.32" />
+              <rect x="274" y="472" width="36" height="28" rx="2" fill="none" stroke="#2D5016" strokeWidth="1.2" strokeOpacity="0.32" />
+            </motion.g>
+
+            {[
+              { cx: 75,  cy: 360, r: 6,   fill: "#2D5016", duration: 4.2, delay: 2.8 },
+              { cx: 175, cy: 310, r: 4,   fill: "#6BBF35", duration: 5.0, delay: 3.1 },
+              { cx: 310, cy: 375, r: 7,   fill: "#C8A96E", duration: 4.6, delay: 3.4 },
+              { cx: 120, cy: 220, r: 4,   fill: "#6BBF35", duration: 3.9, delay: 3.8 },
+              { cx: 260, cy: 200, r: 5,   fill: "#2D5016", duration: 5.2, delay: 4.1 },
+              { cx: 400, cy: 290, r: 4,   fill: "#3D9BE9", duration: 4.4, delay: 4.5 },
+              { cx: 50,  cy: 140, r: 3.5, fill: "#FFD700", duration: 4.0, delay: 4.9 },
+              { cx: 345, cy: 180, r: 5,   fill: "#6BBF35", duration: 4.8, delay: 5.2 },
+              { cx: 200, cy: 400, r: 4.5, fill: "#C8A96E", duration: 3.7, delay: 5.6 },
+            ].map((p, i) => (
+              <motion.circle
+                key={i}
+                cx={p.cx} cy={p.cy} r={p.r} fill={p.fill}
+                initial={{ y: 0, opacity: 0 }}
+                animate={{ y: -90, opacity: [0, 0.65, 0.35, 0] }}
+                transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "linear" }}
+              />
+            ))}
+
+            <text
+              transform="rotate(-90,430,300)" x="430" y="300"
+              textAnchor="middle" fill="#2D5016" fontSize="8"
+              fontFamily="monospace" opacity="0.18" letterSpacing="4"
+            >
+              WÄRMEFLUSS · ENERGIE
+            </text>
+          </svg>
         </div>
       </section>
 
@@ -513,7 +557,8 @@ export default function Home() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; padding: 4rem 1.5rem !important; }
+          .hero-grid { grid-template-columns: 1fr !important; padding-top: 88px !important; }
+          .hero-grid > div:last-child { display: none; }
           .stats-grid { grid-template-columns: 1fr !important; }
         }
         .service-card:hover {
