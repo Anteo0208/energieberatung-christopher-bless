@@ -61,5 +61,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 
+  // PBHub webhook — fire & forget
+  const pbhubUrl = process.env.PBHUB_API_URL;
+  const pbhubSecret = process.env.PBHUB_WEBHOOK_SECRET;
+  if (pbhubUrl && pbhubSecret) {
+    fetch(`${pbhubUrl}/api/submissions/webhook`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-webhook-secret": pbhubSecret },
+      body: JSON.stringify({ source: "KONTAKTFORMULAR", data: body }),
+    }).catch(() => {});
+  }
+
   return NextResponse.json({ success: true });
 }

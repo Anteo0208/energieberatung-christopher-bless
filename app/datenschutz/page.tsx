@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung – Planungsbüro Bless",
@@ -99,17 +100,55 @@ export default function DatenschutzPage() {
           <div>
             <h2 style={sectionHeading}>5. Cookies</h2>
             <p style={bodyText}>
-              Diese Website verwendet keine Tracking- oder Marketing-Cookies. Es werden
-              ausschließlich technisch notwendige Cookies eingesetzt, die für den Betrieb
-              der Website erforderlich sind. Diese Cookies werden nach Ende der Browsersitzung
-              automatisch gelöscht. Eine Einwilligung ist hierfür nicht erforderlich
-              (Art. 6 Abs. 1 lit. f DSGVO).
+              Diese Website setzt technisch notwendige Cookies ein, die für den Betrieb der
+              Website erforderlich sind (Art. 6 Abs. 1 lit. f DSGVO). Darüber hinaus werden
+              Analyse-Cookies (Google Analytics) nur nach Ihrer ausdrücklichen Einwilligung
+              gesetzt (Art. 6 Abs. 1 lit. a DSGVO). Sie können Ihre Einwilligung jederzeit
+              mit Wirkung für die Zukunft widerrufen.
             </p>
           </div>
 
           {/* 6 */}
           <div>
-            <h2 style={sectionHeading}>6. Ihre Rechte als betroffene Person</h2>
+            <h2 style={sectionHeading}>6. Google Analytics</h2>
+            <p style={bodyText}>
+              Diese Website nutzt Google Analytics 4, einen Webanalysedienst der Google LLC,
+              1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google Analytics
+              verwendet Cookies, die eine Analyse der Benutzung der Website ermöglichen.
+              Die durch die Cookies erzeugten Informationen werden in der Regel an einen
+              Server von Google in den USA übertragen und dort gespeichert.
+            </p>
+            <p style={{ ...bodyText, marginTop: "0.75rem" }}>
+              Google Analytics wird auf dieser Website <strong>nur nach Ihrer Einwilligung</strong> aktiviert.
+              Die Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. a DSGVO.
+              Die Datenübertragung in die USA erfolgt auf Grundlage der
+              EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO.
+            </p>
+            <p style={{ ...bodyText, marginTop: "0.75rem" }}>
+              <strong>Gespeicherte Cookies:</strong> <code>_ga</code> (Laufzeit: 2 Jahre),{" "}
+              <code>_ga_NF73H3FG72</code> (Laufzeit: 2 Jahre). Diese dienen der Unterscheidung
+              von Websitebesuchern und der Auswertung von Nutzungsstatistiken.
+            </p>
+            <p style={{ ...bodyText, marginTop: "0.75rem" }}>
+              <strong>Widerruf der Einwilligung:</strong> Sie können Ihre Einwilligung
+              jederzeit widerrufen, indem Sie unten auf „Cookie-Einstellungen zurücksetzen"
+              klicken. Der Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten
+              Verarbeitung. Alternativ können Sie das Browser-Plugin von Google nutzen:{" "}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle}
+              >
+                tools.google.com/dlpage/gaoptout
+              </a>
+            </p>
+            <CookieSettingsButton />
+          </div>
+
+          {/* 7 */}
+          <div>
+            <h2 style={sectionHeading}>7. Ihre Rechte als betroffene Person</h2>
             <p style={bodyText}>Sie haben gegenüber uns folgende Rechte:</p>
             <ul style={{ ...bodyText, paddingLeft: "1.5rem", marginTop: "0.75rem" }}>
               <li><strong>Auskunft</strong> über Ihre bei uns gespeicherten Daten (Art. 15 DSGVO)</li>
@@ -127,9 +166,9 @@ export default function DatenschutzPage() {
             </p>
           </div>
 
-          {/* 7 */}
+          {/* 8 */}
           <div>
-            <h2 style={sectionHeading}>7. Beschwerderecht bei der Aufsichtsbehörde</h2>
+            <h2 style={sectionHeading}>8. Beschwerderecht bei der Aufsichtsbehörde</h2>
             <p style={bodyText}>
               Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die
               Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren. Die zuständige
@@ -138,9 +177,9 @@ export default function DatenschutzPage() {
             </p>
           </div>
 
-          {/* 8 */}
+          {/* 9 */}
           <div>
-            <h2 style={sectionHeading}>8. Datensicherheit</h2>
+            <h2 style={sectionHeading}>9. Datensicherheit</h2>
             <p style={bodyText}>
               Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung
               vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte

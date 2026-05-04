@@ -87,9 +87,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Pflichtfelder fehlen." }, { status: 400 });
   }
 
+  let pdfBytes: Uint8Array;
   try {
-    const pdfBytes = await generatePDF(body);
+    pdfBytes = await generatePDF(body);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("PDF Generierung fehlgeschlagen:", message);
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 
+  const pdfBase64 = Buffer.from(pdfBytes).toString("base64");
+
+  try {
     await resend.emails.send({
       from: "Erfassungsbogen <info@planungsbuero-bless.de>",
       to: "info@planungsbuero-bless.de",
@@ -106,17 +115,23 @@ export async function POST(req: NextRequest) {
           </p>
         </div>
       `,
-      attachments: [
-        {
-          filename: `Erfassungsbogen_${body.nachname}_${body.vorname}.pdf`,
-          content: Buffer.from(pdfBytes).toString("base64"),
-        },
-      ],
+      attachments: [{ filename: `Erfassungsbogen_${body.nachname}_${body.vorname}.pdf`, content: pdfBase64 }],
     });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : String(err);
     console.error("Erfassungsbogen Fehler:", message);
     return NextResponse.json({ error: message }, { status: 500 });
+  }
+
+  // PBHub webhook — fire & forget
+  const pbhubUrl = process.env.PBHUB_API_URL;
+  const pbhubSecret = process.env.PBHUB_WEBHOOK_SECRET;
+  if (pbhubUrl && pbhubSecret) {
+    fetch(`${pbhubUrl}/api/submissions/webhook`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-webhook-secret": pbhubSecret },
+      body: JSON.stringify({ source: "ERFASSUNGSBOGEN", data: body, pdfBase64 }),
+    }).catch(() => {});
   }
 
   return NextResponse.json({ success: true });
