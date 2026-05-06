@@ -103,39 +103,39 @@ export default function ErfassungsbogenPage() {
 
               <div style={gridTwo}>
                 <Field label="Vorname" hint="(wie im Personalausweis)" required>
-                  <input type="text" required placeholder="Max" value={form.vorname} onChange={(e) => update("vorname", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.vorname} onChange={(e) => update("vorname", e.target.value)} style={inputStyle} />
                 </Field>
                 <Field label="Nachname" hint="(wie im Personalausweis)" required>
-                  <input type="text" required placeholder="Mustermann" value={form.nachname} onChange={(e) => update("nachname", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.nachname} onChange={(e) => update("nachname", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
 
               <div style={gridThree}>
                 <div style={{ gridColumn: "span 2" }}>
                   <Field label="Straße" required>
-                    <input type="text" required placeholder="Musterstraße" value={form.strasse} onChange={(e) => update("strasse", e.target.value)} style={inputStyle} />
+                    <input type="text" required value={form.strasse} onChange={(e) => update("strasse", e.target.value)} style={inputStyle} />
                   </Field>
                 </div>
                 <Field label="Hausnummer" required>
-                  <input type="text" required placeholder="12" value={form.hausnummer} onChange={(e) => update("hausnummer", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.hausnummer} onChange={(e) => update("hausnummer", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
 
               <div style={gridTwo}>
                 <Field label="Postleitzahl" required>
-                  <input type="text" required placeholder="41199" value={form.plz} onChange={(e) => update("plz", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.plz} onChange={(e) => update("plz", e.target.value)} style={inputStyle} />
                 </Field>
                 <Field label="Ort" required>
-                  <input type="text" required placeholder="Mönchengladbach" value={form.ort} onChange={(e) => update("ort", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.ort} onChange={(e) => update("ort", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
 
               <div style={gridTwo}>
                 <Field label="Geburtsdatum" required>
-                  <input type="text" required placeholder="TT.MM.JJJJ" value={form.geburtsdatum} onChange={(e) => update("geburtsdatum", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.geburtsdatum} onChange={(e) => update("geburtsdatum", e.target.value)} style={inputStyle} />
                 </Field>
                 <Field label="Geburtsort" required>
-                  <input type="text" required placeholder="Musterstadt" value={form.geburtsort} onChange={(e) => update("geburtsort", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.geburtsort} onChange={(e) => update("geburtsort", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
             </div>
@@ -148,15 +148,15 @@ export default function ErfassungsbogenPage() {
               </p>
 
               <Field label="IBAN" required>
-                <input type="text" required placeholder="DE00 0000 0000 0000 0000 00" value={form.iban} onChange={(e) => update("iban", e.target.value)} style={inputStyle} />
+                <input type="text" required value={form.iban} onChange={(e) => update("iban", e.target.value)} style={inputStyle} />
               </Field>
 
               <div style={gridTwo}>
                 <Field label="BIC" required>
-                  <input type="text" required placeholder="GENODED1SLE" value={form.bic} onChange={(e) => update("bic", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.bic} onChange={(e) => update("bic", e.target.value)} style={inputStyle} />
                 </Field>
                 <Field label="Steueridentifikationsnummer" required>
-                  <input type="text" required placeholder="41 819 256 707" value={form.steuerIdNr} onChange={(e) => update("steuerIdNr", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.steuerIdNr} onChange={(e) => update("steuerIdNr", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
             </div>
@@ -167,10 +167,10 @@ export default function ErfassungsbogenPage() {
 
               <div style={gridTwo}>
                 <Field label="Telefon" required>
-                  <input type="tel" required placeholder="+49 160 000 0000" value={form.telefon} onChange={(e) => update("telefon", e.target.value)} style={inputStyle} />
+                  <input type="tel" required value={form.telefon} onChange={(e) => update("telefon", e.target.value)} style={inputStyle} />
                 </Field>
                 <Field label="E-Mail" required>
-                  <input type="email" required placeholder="ihre@email.de" value={form.email} onChange={(e) => update("email", e.target.value)} style={inputStyle} />
+                  <input type="email" required value={form.email} onChange={(e) => update("email", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
             </div>
@@ -182,29 +182,29 @@ export default function ErfassungsbogenPage() {
               <div style={gridThree}>
                 <div style={{ gridColumn: "span 2" }}>
                   <Field label="Straße" required>
-                    <input type="text" required placeholder="Objektstraße" value={form.gebaeudeStrasse} onChange={(e) => update("gebaeudeStrasse", e.target.value)} style={inputStyle} />
+                    <input type="text" required value={form.gebaeudeStrasse} onChange={(e) => update("gebaeudeStrasse", e.target.value)} style={inputStyle} />
                   </Field>
                 </div>
                 <Field label="Hausnummer" required>
-                  <input type="text" required placeholder="12" value={form.gebaeudeHausnummer} onChange={(e) => update("gebaeudeHausnummer", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.gebaeudeHausnummer} onChange={(e) => update("gebaeudeHausnummer", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
 
               <div style={gridTwo}>
                 <Field label="Postleitzahl" required>
-                  <input type="text" required placeholder="41199" value={form.gebaeudePlz} onChange={(e) => update("gebaeudePlz", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.gebaeudePlz} onChange={(e) => update("gebaeudePlz", e.target.value)} style={inputStyle} />
                 </Field>
                 <Field label="Ort" required>
-                  <input type="text" required placeholder="Mönchengladbach" value={form.gebaeudeOrt} onChange={(e) => update("gebaeudeOrt", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.gebaeudeOrt} onChange={(e) => update("gebaeudeOrt", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
 
               <div style={gridTwo}>
                 <Field label="Datum des Bauantrags / Baujahr" required>
-                  <input type="text" required placeholder="1920" value={form.baujahr} onChange={(e) => update("baujahr", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.baujahr} onChange={(e) => update("baujahr", e.target.value)} style={inputStyle} />
                 </Field>
                 <Field label="Anzahl Wohneinheiten / Gewerbeeinheiten" required>
-                  <input type="text" required placeholder="WE 1" value={form.wohneinheiten} onChange={(e) => update("wohneinheiten", e.target.value)} style={inputStyle} />
+                  <input type="text" required value={form.wohneinheiten} onChange={(e) => update("wohneinheiten", e.target.value)} style={inputStyle} />
                 </Field>
               </div>
             </div>
